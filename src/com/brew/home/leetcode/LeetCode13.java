@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 import java.util.HashMap;
 
@@ -76,15 +76,13 @@ public class LeetCode13 {
      * @Author: feiyi
      * @Date: 2019/7/17 11:06 AM
      **/
-    @Test
-    public void test5() {
-//        String str = "III";
-//        String str = "IV";
-//        String str = "IX";
-//        String str = "LVIII";
+    public static void main(String[] args){
+        //        String str = "III";
+        //        String str = "IV";
+        //        String str = "IX";
+        //        String str = "LVIII";
         String str = "MCMXCIV";
         System.out.println(romanToInt(str));
-
     }
 
     public static int romanToInt(String s) {

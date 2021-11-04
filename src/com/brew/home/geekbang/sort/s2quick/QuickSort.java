@@ -10,8 +10,7 @@
  */
 package com.brew.home.geekbang.sort.s2quick;
 
-import com.alibaba.fastjson.JSONObject;
-import org.junit.Test;
+import java.util.Arrays;
 
 /**
  * 〈一句话功能简述〉:
@@ -24,12 +23,10 @@ import org.junit.Test;
  */
 public class QuickSort {
 
-    @Test
-    public void test() {
+    public static void main(String[] args){
         int[] arr = {10, 7, 2, 4, 7, 62, 3, 4, 2, 1, 8, 9, 19};
         quickSort2(arr, 0, arr.length - 1);
-        System.out.println(JSONObject.toJSONString(arr));
-
+        System.out.println(Arrays.toString(arr));
     }
 
     public static void quickSort(int[] arr, int low, int high) {
@@ -64,10 +61,6 @@ public class QuickSort {
         t = arr[j];
         arr[j] = arr[i];
         arr[i] = t;
-    }
-
-    public static <T> T getA(T... ts) {
-        return ts[0];
     }
 
 

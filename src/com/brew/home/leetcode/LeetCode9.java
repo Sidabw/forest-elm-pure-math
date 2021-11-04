@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,8 +51,7 @@ public class LeetCode9 {
      * @Author: feiyi
      * @Date: 2020/5/13 5:51 PM
      **/
-    @Test
-    public void test12() {
+    public static void main(String[] args){
         System.out.println(isPalindrome(121));
         System.out.println(isPalindrome(1211));
         System.out.println(isPalindrome(0));

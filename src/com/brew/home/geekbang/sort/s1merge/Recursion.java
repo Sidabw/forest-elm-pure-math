@@ -10,7 +10,6 @@
  */
 package com.brew.home.geekbang.sort.s1merge;
 
-import org.junit.Test;
 
 /**
  * 〈一句话功能简述〉:
@@ -21,13 +20,14 @@ import org.junit.Test;
  * @since 1.0.0
  */
 public class Recursion {
-    //单层递归
-    @Test
-    public void test1() {
+
+    public static void main(String[] args) {
+        //单层递归
         singleRecursion(5);
     }
 
-    private void singleRecursion(int i) {
+
+    private static void singleRecursion(int i) {
         if (i > 0) {
             System.out.println("+");
             singleRecursion(--i);
@@ -37,7 +37,6 @@ public class Recursion {
     }
 
     //双层递归
-    @Test
     public void test2() {
         int a = 2;
         int b = 2;

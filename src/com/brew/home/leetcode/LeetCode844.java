@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 import java.util.Stack;
 
@@ -60,15 +60,14 @@ public class LeetCode844 {
      * @Author: feiyi
      * @Date: 2020/5/28 2:39 PM
      **/
-    @Test
-    public void test() {
+    public static void main(String[] args){
         System.out.println(backspaceCompare("ab#c", "ad#c"));
         System.out.println(backspaceCompare("ab##", "c#d#"));
         System.out.println(backspaceCompare("a##c", "#a#c"));
         System.out.println(backspaceCompare("a#c", "b"));
     }
 
-    public boolean backspaceCompare(String S, String T) {
+    public static boolean backspaceCompare(String S, String T) {
         Stack<Character> s1 = new Stack<>();
         Stack<Character> s2 = new Stack<>();
         char[] chars = S.toCharArray();

@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 /**
  * 〈一句话功能简述〉:
@@ -36,8 +36,7 @@ public class LeetCode21 {
      * @Author: feiyi
      * @Date: 2019/7/22 4:51 PM
      **/
-    @Test
-    public void test10() {
+    public static void main(String[] args){
         ListNode listNode1 = new ListNode(1);
         ListNode listNode2 = new ListNode(2);
         ListNode listNode3 = new ListNode(4);
@@ -51,21 +50,21 @@ public class LeetCode21 {
         listNode4.setNext(listNode5);
         listNode5.setNext(listNode6);
         mergeTwoLists(listNode1, listNode4);
+
+
+
+
+        // //test2
+        // System.out.println(orangesRotting(new int[][]{{2, 1, 1}, {1, 1, 0}, {0, 1, 1}}));
+        // System.out.println(orangesRotting(new int[][]{{2, 1, 1}, {0, 1, 1}, {1, 0, 1}}));
+        // System.out.println(orangesRotting(new int[][]{{0, 2}}));//0
+        // System.out.println(orangesRotting(new int[][]{{0}}));//0
+        // System.out.println(orangesRotting(new int[][]{{1}}));//-1
+        // System.out.println(orangesRotting(new int[][]{{2}}));//0
+        // System.out.println(orangesRotting(new int[][]{{1}, {2}}));//1
+        // System.out.println(orangesRotting(new int[][]{{2}, {1}}));//1
     }
 
-    @Test
-    public void test11() {
-        System.out.println(orangesRotting(new int[][]{{2, 1, 1}, {1, 1, 0}, {0, 1, 1}}));
-        System.out.println(orangesRotting(new int[][]{{2, 1, 1}, {0, 1, 1}, {1, 0, 1}}));
-        System.out.println(orangesRotting(new int[][]{{0, 2}}));//0
-        System.out.println(orangesRotting(new int[][]{{0}}));//0
-        System.out.println(orangesRotting(new int[][]{{1}}));//-1
-        System.out.println(orangesRotting(new int[][]{{2}}));//0
-        System.out.println(orangesRotting(new int[][]{{1}, {2}}));//1
-        System.out.println(orangesRotting(new int[][]{{2}, {1}}));//1
-
-
-    }
 
     public static int orangesRotting(int[][] grid) {
         if (grid.length == 0) return -1;

@@ -10,8 +10,8 @@
  */
 package com.brew.home.leetcode;
 
-import com.alibaba.fastjson.JSONObject;
-import org.junit.Test;
+
+
 
 /**
  * 〈一句话功能简述〉:
@@ -50,22 +50,21 @@ public class LeetCode876 {
      * @Author: feiyi
      * @Date: 2020/5/26 5:02 PM
      **/
-    @Test
-    public void test() {
+    public static void main(String[] args){
         ListNode listNode1 = new ListNode(1);
         ListNode listNode2 = new ListNode(2);
-//        ListNode listNode3 = new ListNode(3);
-//        ListNode listNode4 = new ListNode(2);
-//        ListNode listNode5 = new ListNode(4);
+        //        ListNode listNode3 = new ListNode(3);
+        //        ListNode listNode4 = new ListNode(2);
+        //        ListNode listNode5 = new ListNode(4);
         listNode1.setNext(listNode2);
-//        listNode2.setNext(listNode3);
-//        listNode3.setNext(listNode4);
-//        listNode4.setNext(listNode5);
+        //        listNode2.setNext(listNode3);
+        //        listNode3.setNext(listNode4);
+        //        listNode4.setNext(listNode5);
         ListNode listNode = middleNode(listNode1);
-        System.out.println(JSONObject.toJSONString(listNode));
+        System.out.println(listNode);
     }
 
-    public ListNode middleNode(ListNode head) {
+    public static ListNode middleNode(ListNode head) {
         ListNode cur = head;
         int size = 0;
         while (cur != null) {

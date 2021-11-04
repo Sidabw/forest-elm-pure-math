@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 /**
  * 〈一句话功能简述〉:
@@ -72,12 +72,11 @@ public class LeetCode27 {
      * @Author: feiyi
      * @Date: 2019/7/19 2:13 PM
      **/
-    @Test
-    public void test9() {
-//        int[] nums = new int[]{0,1,2,2,3,0,4,2};
-//        int val = 2;
-//        int[] nums = new int[]{3,2,2,3};
-//        int val = 3;
+    public static void main(String[] args){
+        //        int[] nums = new int[]{0,1,2,2,3,0,4,2};
+        //        int val = 2;
+        //        int[] nums = new int[]{3,2,2,3};
+        //        int val = 3;
         int[] nums = new int[]{3, 3, 3, 3};
         int val = 3;
         System.out.println(removeElement(nums, val));

@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 /**
  * 〈一句话功能简述〉:
@@ -22,17 +22,16 @@ import org.junit.Test;
  */
 public class LeetCode19 {
 
-    @Test
-    public void test() {
+    public static void main(String[] args){
         ListNode listNode1 = new ListNode(1);
         ListNode listNode2 = new ListNode(2);
-//        ListNode listNode3 = new ListNode(3);
-//        ListNode listNode4 = new ListNode(2);
-//        ListNode listNode5 = new ListNode(4);
+        //        ListNode listNode3 = new ListNode(3);
+        //        ListNode listNode4 = new ListNode(2);
+        //        ListNode listNode5 = new ListNode(4);
         listNode1.setNext(listNode2);
-//        listNode2.setNext(listNode3);
-//        listNode3.setNext(listNode4);
-//        listNode4.setNext(listNode5);
+        //        listNode2.setNext(listNode3);
+        //        listNode3.setNext(listNode4);
+        //        listNode4.setNext(listNode5);
         ListNode res = removeNthFromEnd(listNode1, 1);
         System.out.println(res);
     }
@@ -41,7 +40,7 @@ public class LeetCode19 {
     //pass one， 拿到 linked list 的size，对应计算出n-th from start
     //pass two，删除n-th元素
 
-    public ListNode removeNthFromEnd(ListNode head, int n) {
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode cur = head;
         int size = 0;
         while (cur != null) {

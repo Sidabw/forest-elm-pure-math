@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 /**
  * 〈一句话功能简述〉:
@@ -43,9 +43,8 @@ public class LeetCode58 {
      * @Author: feiyi
      * @Date: 2019/7/17 10:53 AM
      **/
-    @Test
-    public void test4() {
-//        String s = "Hello World";
+    public static void main(String[] args){
+        //        String s = "Hello World";
         String s = " ";
         System.out.println(lengthOfLastWord(s));
     }

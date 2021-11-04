@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 /**
  * 〈一句话功能简述〉:
@@ -45,11 +45,9 @@ public class LeetCode7 {
      * @Author: feiyi
      * @Date: 2019/7/1 7:40 PM
      **/
-    @Test
-    public void test2() {
+    public static void main(String[] args){
         System.out.println(n(-230));
     }
-
 
     public static int n(int in) {
         String strIn = new Integer(in).toString();

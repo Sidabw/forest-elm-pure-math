@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +44,7 @@ public class LeetCode234 {
      * @Author: feiyi
      * @Date: 2020/5/21 9:13 AM
      **/
-    @Test
+    public static void main(String[] args){}
     public void test13() {
         //笨方法：第一次遍历拿到中间点；第二次遍历把中间点之后的数据放到一个ArrayList中；第三次遍历看 链表first node 到中间点的
         //元素 和 ArrayList中的元素是否相同，ArrayList倒序遍历。

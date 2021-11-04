@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 import java.util.HashMap;
 
@@ -34,8 +34,7 @@ public class LeetCode1137 {
      * @Author: feiyi
      * @Date: 2020/5/29 10:39 AM
      **/
-    @Test
-    public void test() {
+    public static void main(String[] args){
         //t3=t0+t1+t2   =>2
         //t4=t1+t2+t3   =>4
         //t5=t2+t3+t4   =>7
@@ -46,9 +45,9 @@ public class LeetCode1137 {
         System.out.println(tribonacci(35));
     }
 
-    private HashMap<Integer, Integer> map = new HashMap<>();
+    private static HashMap<Integer, Integer> map = new HashMap<>();
 
-    public int tribonacci(int n) {
+    public static int tribonacci(int n) {
         if (n <= 0) return 0;
         if (n == 1) return 1;
         if (n == 2) return 1;

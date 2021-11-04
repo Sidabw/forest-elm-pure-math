@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 import java.util.EmptyStackException;
 import java.util.Stack;
@@ -42,8 +42,7 @@ public class LeetCode155 {
      * @Author: feiyi
      * @Date: 2020/5/27 11:43 AM
      **/
-    @Test
-    public void test() {
+    public static void main(String[] args) {
         MinStack minStack = new MinStack();
         minStack.push(-2);
         minStack.push(0);
@@ -52,7 +51,6 @@ public class LeetCode155 {
         minStack.pop();
         System.out.println(minStack.top());     //--> 返回 0.
         System.out.println(minStack.getMin());   //--> 返回 -2.
-
     }
 
 }

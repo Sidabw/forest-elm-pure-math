@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 /**
  * 〈一句话功能简述〉:
@@ -68,12 +68,11 @@ public class LeetCode26 {
      * @Author: feiyi
      * @Date: 2019/7/17 9:26 PM
      **/
-    @Test
-    public void test7() {
+    public static void main(String[] args){
         //[],
-//        int[] nums = new int[]{0,0,1,1,1,2,2,3,3,4};
-//        int[] nums = new int[]{0, 0, 0};
-//        int[] nums = new int[]{1, 1, 2};
+        //        int[] nums = new int[]{0,0,1,1,1,2,2,3,3,4};
+        //        int[] nums = new int[]{0, 0, 0};
+        //        int[] nums = new int[]{1, 1, 2};
         int[] nums = new int[]{1, 2};
         System.out.println(removeDuplicates(nums));
     }

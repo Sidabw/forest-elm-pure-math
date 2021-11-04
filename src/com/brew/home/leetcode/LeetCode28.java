@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 /**
  * 〈一句话功能简述〉:
@@ -50,8 +50,7 @@ public class LeetCode28 {
      * @Author: feiyi
      * @Date: 2019/7/18 4:00 PM
      **/
-    @Test
-    public void test8() {
+    public static void main(String[] args){
         String hayStack = "mississippi";
         String needle = "sippia";
         System.out.println(strStr(hayStack, needle));

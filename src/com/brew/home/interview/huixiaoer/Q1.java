@@ -26,8 +26,6 @@ public class Q1 {
         System.out.println(res);
     }
 
-
-
     private static int[] splitByXXX(int[] origin) {
         int jiCount = 0;
         int ouCount = 0;

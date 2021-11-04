@@ -10,8 +10,6 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
-
 import java.util.Stack;
 
 /**
@@ -25,8 +23,7 @@ import java.util.Stack;
 public class LeetCode232 {
 
     //半个小时。。  而且还是看了答案又写的情况。。
-    @Test
-    public void test() {
+    public static void main(String[] args){
         MyQueue queue = new MyQueue();
 
         queue.push(1);
@@ -34,17 +31,17 @@ public class LeetCode232 {
         System.out.println(queue.peek());  // 返回 1
         System.out.println(queue.pop());   // 返回 1
         System.out.println(queue.empty()); // 返回 false
+
+
+
+        // MyStack myStack = new MyStack();
+        // myStack.push(1);
+        // myStack.push(2);
+        // System.out.println(myStack.top()); // returns 2
+        // System.out.println(myStack.pop()); // returns 2
+        // System.out.println(myStack.empty()); // returns false
     }
 
-    @Test
-    public void t2 () {
-        MyStack myStack = new MyStack();
-        myStack.push(1);
-        myStack.push(2);
-        System.out.println(myStack.top()); // returns 2
-        System.out.println(myStack.pop()); // returns 2
-        System.out.println(myStack.empty()); // returns false
-    }
 }
 
 class MyQueue {

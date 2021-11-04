@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 /**
  * 〈一句话功能简述〉:
@@ -50,11 +50,10 @@ public class LeetCode14 {
      * @Author: feiyi
      * @Date: 2019/7/15 7:50 PM
      **/
-    @Test
-    public void test3() {
+    public static void main(String[] args){
         String[] strs = new String[]{"flower", "flow", "flight"};
-//        String[] strs = new String[]{"dog","racecar","car"};
-//        String[] strs = new String[]{"c", "c"};
+        //        String[] strs = new String[]{"dog","racecar","car"};
+        //        String[] strs = new String[]{"c", "c"};
         System.out.println(longestCommonPrefix(strs));
     }
 

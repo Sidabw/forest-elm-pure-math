@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -64,20 +64,19 @@ public class LeetCode20 {
      * @Author: feiyi
      * @Date: 2019/7/17 11:52 AM
      **/
-    @Test
-    public void test6() {
-//        String str = "{[]}";
-//        String str = "([][]){{}}";
-//        String str = "(((([]))}]";
-//        String str = "()[]{}";
+    public static void main(String[] args){
+        //        String str = "{[]}";
+        //        String str = "([][]){{}}";
+        //        String str = "(((([]))}]";
+        //        String str = "()[]{}";
         String str = "(]";
-//        String str = "}[)]";
-//        String str = "([)]";//false，正确的顺序！！！
-//        ( ( ( [ ] ) ) )
-//        0 1 2 3 4 5 6 7
-//
-//        { { { } } }
-//        0 1 2 3 4 5
+        //        String str = "}[)]";
+        //        String str = "([)]";//false，正确的顺序！！！
+        //        ( ( ( [ ] ) ) )
+        //        0 1 2 3 4 5 6 7
+        //
+        //        { { { } } }
+        //        0 1 2 3 4 5
         System.out.println(isValid2(str));
     }
 
@@ -125,7 +124,7 @@ public class LeetCode20 {
         return true;
     }
 
-    public boolean isValid2(String origin) {
+    public static boolean isValid2(String origin) {
         //使用Stack来解决这个问题。
         char[] chars = origin.toCharArray();
         Stack<Object> objectStack = new Stack<>();

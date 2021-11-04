@@ -10,7 +10,8 @@
  */
 package com.brew.home.geekbang.sort.s3bucket;
 
-import com.Java.math.geekbang.sort.s2quick.QuickSort;
+
+import com.brew.home.geekbang.sort.s2quick.QuickSort;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -63,7 +64,7 @@ public class BucketSort {
             int[] eachBucket = result[i];
             int resultIndex = resultIndexes[i];
             int[] resultRange = Arrays.copyOfRange(eachBucket, 0, resultIndex - 1);
-            QuickSort.quickSort2(resultRange,0, resultRange.length - 1);
+            QuickSort.quickSort2(resultRange, 0, resultRange.length - 1);
             for (int j = 0; j < resultRange.length; j++) {
                 System.out.println(resultRange[j]);
             }

@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 /**
  * 〈一句话功能简述〉:
@@ -48,8 +48,7 @@ public class LeetCode3 {
      * @Author: feiyi
      * @Date: 2019/6/12 7:56 PM
      **/
-    @Test
-    public void test() {
+    public static void main(String[] args){
         System.out.println(m());
     }
 

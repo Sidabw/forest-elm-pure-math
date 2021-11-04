@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -25,8 +25,7 @@ import java.util.Deque;
  */
 public class LeetCode933 {
 
-    @Test
-    public void test() {
+    public static void main(String[] args){
         RecentCounter recentCounter = new RecentCounter();
         System.out.println(recentCounter.ping(1));
         System.out.println(recentCounter.ping(2));

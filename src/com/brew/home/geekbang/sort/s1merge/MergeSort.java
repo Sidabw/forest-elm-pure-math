@@ -10,8 +10,6 @@
  */
 package com.brew.home.geekbang.sort.s1merge;
 
-import com.alibaba.fastjson.JSONArray;
-
 /**
  * 〈一句话功能简述〉:
  * 〈归并排序
@@ -46,8 +44,8 @@ public class MergeSort {
         int[] a = new int[]{1, 5, 3, 4, 8};
         int[] temp = new int[5];
         mergeSort(a, 0, 4, temp);
-        System.out.println(JSONArray.toJSONString(a));
-        System.out.println(JSONArray.toJSONString(temp));
+        System.out.println(a);
+        System.out.println(temp);
 
     }
 

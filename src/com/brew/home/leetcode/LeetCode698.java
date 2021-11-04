@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 /**
  * 〈一句话功能简述〉:
@@ -22,7 +22,7 @@ import org.junit.Test;
  */
 public class LeetCode698 {
 
-    @Test
+    public static void main(String[] args){}
     public void test() {
 
     }

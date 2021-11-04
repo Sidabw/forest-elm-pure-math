@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-import org.junit.Test;
+
 
 import java.util.ArrayList;
 
@@ -43,20 +43,19 @@ public class LeetCode206 {
      * @Author: feiyi
      * @Date: 2020/5/26 9:33 AM
      **/
-    @Test
-    public void test() {
+    public static void main(String[] args){
         ListNode listNode1 = new ListNode(1);
-//        ListNode listNode2 = new ListNode(2);
-//        ListNode listNode3 = new ListNode(3);
-//        ListNode listNode4 = new ListNode(2);
-//        ListNode listNode5 = new ListNode(4);
-//        listNode1.setNext(listNode2);
-//        listNode2.setNext(listNode3);
-//        listNode3.setNext(listNode4);
-//        listNode4.setNext(listNode5);
+        //        ListNode listNode2 = new ListNode(2);
+        //        ListNode listNode3 = new ListNode(3);
+        //        ListNode listNode4 = new ListNode(2);
+        //        ListNode listNode5 = new ListNode(4);
+        //        listNode1.setNext(listNode2);
+        //        listNode2.setNext(listNode3);
+        //        listNode3.setNext(listNode4);
+        //        listNode4.setNext(listNode5);
 
-//        ListNode listNode = reverseList(listNode1);
-//        System.out.println(listNode);
+        //        ListNode listNode = reverseList(listNode1);
+        //        System.out.println(listNode);
 
         ListNode res = reverseList2(listNode1);
         System.out.println(res);
@@ -81,7 +80,7 @@ public class LeetCode206 {
 
     //输入: 1->2->3->4->5->NULL
     //输出: 5->4->3->2->1->NULL
-    public ListNode reverseList2(ListNode cur) {
+    public static ListNode reverseList2(ListNode cur) {
         //在遍历的过程中，改变指针的方向。
         if (cur == null) return null;
 

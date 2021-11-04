@@ -10,8 +10,8 @@
  */
 package com.brew.home.leetcode;
 
-import com.alibaba.fastjson.JSONObject;
-import org.junit.Test;
+
+
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -52,8 +52,7 @@ public class LeetCode224 {
      * @Author: feiyi
      * @Date: 2020/5/28 2:51 PM
      **/
-    @Test
-    public void test() {
+    public static void main(String[] args){
         System.out.println(calculate("1+2+3-1+4"));
         System.out.println(calculate("(1+(4+5+2)-3)+(6+8)"));
         System.out.println(calculate(" 2-1 + 2 "));
@@ -63,7 +62,7 @@ public class LeetCode224 {
 
     // "(1+(4+5+2)-3)+(6+8)"
     //1+2+3+(4+5)+
-    public int calculate(String s) {
+    public static int calculate(String s) {
         Stack<Integer> s1 = new Stack<>();
         Stack<Character> s2 = new Stack<>();
         //预处理开始，去空格，合并 大于1个字符的数字

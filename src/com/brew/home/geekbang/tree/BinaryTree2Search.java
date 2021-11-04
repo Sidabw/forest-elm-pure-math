@@ -11,7 +11,7 @@
 package com.brew.home.geekbang.tree;
 
 
-import org.junit.Test;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +36,14 @@ public class BinaryTree2Search {
         insert(root, 13);
         BinaryTree1Demo.inOrder(root);
 
+
+
+
+
+
+        Node root1 = buildTree1();
+        Node root2 = buildTree2();
+        System.out.println(com(root1, root2));
     }
 
     private static void delete(Node root, Node target) {
@@ -159,13 +167,6 @@ public class BinaryTree2Search {
             if (i1 != i2) return false;
         }
         return true;
-    }
-
-    @Test
-    public void test() {
-        Node root1 = buildTree1();
-        Node root2 = buildTree2();
-        System.out.println(com(root1, root2));
     }
 
     /**
