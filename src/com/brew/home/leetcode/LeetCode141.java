@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-
+import com.brew.home.common.ListNode;
 
 /**
  * 〈一句话功能简述〉:
@@ -29,7 +29,7 @@ public class LeetCode141 {
 //        ListNode listNode3 = new ListNode(3);
 //        ListNode listNode4 = new ListNode(2);
 //        ListNode listNode5 = new ListNode(4);
-        listNode1.setNext(listNode2);
+        listNode1.next = listNode2;
 //        listNode2.setNext(listNode3);
 //        listNode3.setNext(listNode4);
 //        listNode4.setNext(listNode5);

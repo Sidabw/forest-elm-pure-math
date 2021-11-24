@@ -10,7 +10,7 @@
  */
 package com.brew.home.leetcode;
 
-
+import com.brew.home.common.ListNode;
 
 /**
  * 〈一句话功能简述〉:
@@ -44,11 +44,11 @@ public class LeetCode21 {
         ListNode listNode5 = new ListNode(3);
         ListNode listNode6 = new ListNode(4);
 
-        listNode1.setNext(listNode2);
-        listNode2.setNext(listNode3);
+        listNode1.next = listNode2;
+        listNode2.next = listNode3;
 
-        listNode4.setNext(listNode5);
-        listNode5.setNext(listNode6);
+        listNode4.next = listNode5;
+        listNode5.next = listNode6;
         mergeTwoLists(listNode1, listNode4);
 
 

@@ -12,6 +12,8 @@ package com.brew.home.leetcode;
 
 
 
+import com.brew.home.common.ListNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,10 +68,10 @@ public class LeetCode234 {
         ListNode listNode3 = new ListNode(3);
         ListNode listNode4 = new ListNode(2);
         ListNode listNode5 = new ListNode(1);
-        listNode1.setNext(listNode2);
-        listNode2.setNext(listNode3);
-        listNode3.setNext(listNode4);
-        listNode4.setNext(listNode5);
+        listNode1.next = listNode2;
+        listNode2.next = listNode3;
+        listNode3.next = listNode4;
+        listNode4.next = listNode5;
         System.out.println(isPalindrome(listNode1));
     }
 
