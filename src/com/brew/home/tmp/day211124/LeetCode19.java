@@ -22,7 +22,7 @@ public class LeetCode19 {
 
     /**
      *
-     * @param root
+     * @param root root
      * @param delIndexFromEnd 从1开始
      * @return: com.brew.home.common.ListNode
      * @Author: shaogz
