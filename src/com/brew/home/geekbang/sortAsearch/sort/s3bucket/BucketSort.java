@@ -8,10 +8,10 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.geekbang.sort.s3bucket;
+package com.brew.home.geekbang.sortAsearch.sort.s3bucket;
 
 
-import com.brew.home.geekbang.sort.s2quick.QuickSort;
+import com.brew.home.geekbang.sortAsearch.sort.s2quick.QuickSort;
 
 import java.util.Arrays;
 import java.util.Random;

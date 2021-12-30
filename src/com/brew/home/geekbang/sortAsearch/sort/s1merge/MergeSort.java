@@ -8,7 +8,9 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.geekbang.sort.s1merge;
+package com.brew.home.geekbang.sortAsearch.sort.s1merge;
+
+import java.util.Arrays;
 
 /**
  * 〈一句话功能简述〉:
@@ -42,10 +44,11 @@ public class MergeSort {
 //        System.out.println(JSONArray.toJSONString(temp));
 
         int[] a = new int[]{1, 5, 3, 4, 8};
+        //两个有序数组合并的时候使用，不用每次都创建新的temp[]出来
         int[] temp = new int[5];
         mergeSort(a, 0, 4, temp);
-        System.out.println(a);
-        System.out.println(temp);
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(temp));
 
     }
 
@@ -64,14 +67,17 @@ public class MergeSort {
     public static void sortedArrayMerged2(int[] a, int first, int mid, int last, int[] temp) {
         int i = first, j = mid + 1;
         int k = 0;
+        //同时遍历两个数组，合并有序数组
         while (i <= mid && j <= last) {
             if (a[i] < a[j])
                 temp[k++] = a[i++];
             else
                 temp[k++] = a[j++];
         }
+        //处理数组1已经到终点了，数组2余下的好多数据
         while (i <= mid)
             temp[k++] = a[i++];
+        //同上
         while (j <= last)
             temp[k++] = a[j++];
         //接下来在把原a[]的对应数值替换

@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.geekbang.sort.s1merge;
+package com.brew.home.geekbang.sortAsearch.sort.s1merge;
 
 
 /**
