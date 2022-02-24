@@ -20,29 +20,32 @@ import java.util.ArrayDeque;
  * @create 2020/6/26
  * @since 1.0.0
  */
-public class BinaryTree1Demo {
+public class B1BinaryTree {
 
     public static void main(String[] args) {
         Node root = buildTree();
-//        preOrder(root);
-//        inOrder(root);
-        postOrder(root);
+       // preOrder(root);
+       inOrder(root);
+        // postOrder(root);
 //        levelOrder(root);
     }
 
     //前序遍历(先打印当前节点，再打印左子树，再打印右子树)
     private static void preOrder(Node root) {
-        if (root != null)
+        if (root != null) {
             System.out.println(root.value);
-        else
+        } else {
             return;
+        }
         preOrder(root.left);
         preOrder(root.right);
     }
 
     //中序遍历（先打印左子树，再打印本身，再打印右子树）
     public static void inOrder(Node root) {
-        if (root == null) return;
+        if (root == null) {
+            return;
+        }
         inOrder(root.left);
         System.out.println(root.value);
         inOrder(root.right);
@@ -50,7 +53,9 @@ public class BinaryTree1Demo {
 
     //后序遍历（先打印左子树，再打印右子树，再打印本身）
     public static void postOrder(Node root) {
-        if (root == null) return;
+        if (root == null) {
+            return;
+        }
         postOrder(root.left);
         postOrder(root.right);
         System.out.println(root.value);
@@ -63,16 +68,17 @@ public class BinaryTree1Demo {
         while (!nodes.isEmpty()) {
             Node poll = nodes.poll();
             System.out.println(poll.value);
-            if (poll.left != null)
+            if (poll.left != null) {
                 nodes.offer(poll.left);
-            if (poll.right != null)
+            }
+            if (poll.right != null) {
                 nodes.offer(poll.right);
+            }
         }
     }
 
     /**
-     * @param
-     * @Description 声明：这只是一个二叉树，不是二叉搜索树
+     * 声明：这只是一个二叉树，不是二叉搜索树
      * <p>
      * 10
      * 6        11
@@ -83,6 +89,12 @@ public class BinaryTree1Demo {
      * @Date: 2020/6/27 3:35 PM
      **/
     public static Node buildTree() {
+        /*
+        10
+     6      11
+   3   7   9  12
+ 2
+        */
         Node root = new Node(10);
         Node left1 = new Node(6);
         Node right1 = new Node(11);
@@ -99,19 +111,10 @@ public class BinaryTree1Demo {
         right1.left = left3;
         right1.right = right3;
 
+        Node left4 = new Node(2);
+        left2.left = left4;
         return root;
     }
 }
 
-class Node {
 
-    int value;
-
-    Node left;
-
-    Node right;
-
-    public Node(int value) {
-        this.value = value;
-    }
-}
