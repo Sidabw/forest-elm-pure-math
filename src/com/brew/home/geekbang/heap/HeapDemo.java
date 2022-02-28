@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.geekbang;
+package com.brew.home.geekbang.heap;
 
 
 
@@ -22,15 +22,27 @@ package com.brew.home.geekbang;
  */
 public class HeapDemo {
 
-    private int[] data;//从下标为1开始存储数据
-    private int count;//已经存储的数据的格式，对应count++;data[count] = val;
-    private int n;//保证堆满了就不插了，对应if (count>=n) return;
+    /**
+     * 从下标为1开始存储数据
+     */
+    private int[] data;
+    /**
+     * 已经存储的数据的个数，对应count++;data[count] = val;
+     */
+    private int count;
+    /**
+     * 堆的容量。保证堆满了就不插了，对应if (count>=n) return;
+     */
+    private int n;
     public HeapDemo(int capacity) {
         data = new int[capacity + 1];
         n = capacity;
     }
 
-    //往堆中插入数据
+    /**
+     * 往堆中插入数据
+     * @param val val
+     */
     public void insert(int val) {
         if (count>=n) return;
         count++;
@@ -43,16 +55,13 @@ public class HeapDemo {
         }
     }
 
-    private void swap(int[] data, int i, int i1) {
-        int tmp = data[i];
-        data[i] = data[i1];
-        data[i1] = tmp;
-    }
-
-    //从堆里删除数据
+    /**
+     * 删除堆顶元素
+     */
     private void removeMax() {
         if (count == 0) return;
-        data[1] = data[count];//对应图中的"把第一个数据和最后一个数据交换位置，再把最后一个数据删掉"
+        //对应图中的"把第一个数据和最后一个数据交换位置，再把最后一个数据删掉"
+        data[1] = data[count];
         count--;
         //开始重构堆
         heapify();
@@ -69,5 +78,11 @@ public class HeapDemo {
             i = maxPos;
         }
 
+    }
+
+    private void swap(int[] data, int i, int i1) {
+        int tmp = data[i];
+        data[i] = data[i1];
+        data[i1] = tmp;
     }
 }
