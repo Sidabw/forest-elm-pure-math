@@ -11,8 +11,8 @@ public class FindLargestKthElement {
 
     public static void main(String[] args) {
         int[] arr = new int[]{6, 1, 3, 5, 7, 2, 4, 9, 11, 8};
-        int largestKIndex = new FindLargestKthElement().findLargestK(arr, 8);
-        System.out.println(largestKIndex);
+        int largestK_index = new FindLargestKthElement().findLargestK(arr, 8);
+        System.out.println(largestK_index);
     }
 
     int findLargestK(int[] arr, int k) {

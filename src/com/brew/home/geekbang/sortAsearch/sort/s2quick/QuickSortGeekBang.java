@@ -10,14 +10,8 @@ import static com.brew.home.geekbang.sortAsearch.sort.s2quick.QuickSort.swap;
 public class QuickSortGeekBang {
 
     public static void main(String[] args) {
-        //测试分区代码，可比较着笔记看
-        int[] arr = new int[]{6, 11, 3, 9, 8};
-        int i = new QuickSortGeekBang().partition(arr, 0, 4);
-        System.out.println(i);
-        System.out.println(Arrays.toString(arr));
-
         //测试整体排序代码
-        arr = new int[]{6, 11, 3, 9, 8};
+        int[] arr = new int[]{6, 11, 3, 9, 8};
         new QuickSortGeekBang().quick(arr, 0, 4);
         System.out.println(Arrays.toString(arr));
     }
@@ -31,6 +25,16 @@ public class QuickSortGeekBang {
         quick(arr, q + 1, r);
     }
 
+    /**
+     * <p> 1. 两个指针i、j，一个pivot默认就是 r 指针元素
+     * <p> 2. j指针元素和r指针元素比较，j大的那j就往前走
+     * <p> 3. j小的，交换i 和 j，此时j和i都往前走
+     * <p> 4. 最后交换i和r
+     * @param arr 原始数组
+     * @param p left
+     * @param r right
+     * @return pivot
+     */
     int partition(int[] arr, int p, int r) {
         int i = p;
         int j = p;

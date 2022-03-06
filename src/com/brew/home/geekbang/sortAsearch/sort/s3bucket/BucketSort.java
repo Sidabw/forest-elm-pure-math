@@ -1,13 +1,3 @@
-/**
- * Copyright (C), 2018-2020, zenki.ai
- * FileName: BucketSort
- * Author:   feiyi
- * Date:     2020/10/17 12:28 PM
- * Description:
- * History:
- * <author>          <time>          <version>          <desc>
- * 作者姓名           修改时间           版本号              描述
- */
 package com.brew.home.geekbang.sortAsearch.sort.s3bucket;
 
 
@@ -26,8 +16,10 @@ import java.util.Random;
  */
 public class BucketSort {
 
+    //已经找不到原题目是在哪里了,,,,,
+
     public static void main(String[] args) {
-        //构建一个大小为100000的数组。该数组的最大值不会超过300000
+        //构建一个大小为100_000的数组。该数组的最大值不会超过300000
         int[] testData = buildTestData();
         //获取最大值。最小值的话默认就是0
         int max = getMaxVal(testData);

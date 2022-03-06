@@ -5,12 +5,12 @@ import java.util.Arrays;
 /**
  * @author shaogz
  */
-public class MergeSortBackPractice2 {
+public class MergeSortBakPractice2 {
 
     public static void main(String[] args) {
         int[] a = new int[]{1, 5, 3, 4, 8};
         int[] temp = new int[5];
-        new MergeSortBackPractice2().mSort(a, 0, 4, temp);
+        new MergeSortBakPractice2().mSort(a, 0, 4, temp);
         System.out.println(Arrays.toString(a));
     }
 

@@ -86,36 +86,4 @@ public class MergeSort {
         }
     }
 
-
-    //合并两个有序数组1
-    public static int[] sortedArrayMerged(int[] a, int[] b) {
-        int totalLength = a.length + b.length;
-        int[] result = new int[totalLength];
-        int aIndex = 0;
-        int bIndex = 0;
-        int index = 0;
-        while (index < totalLength) {
-            if (a[aIndex] < b[bIndex]) {
-                result[index] = a[aIndex];
-                aIndex++;
-            } else {
-                result[index] = b[bIndex];
-                bIndex++;
-            }
-            Boolean aEnd = aIndex == a.length;
-            Boolean bEnd = bIndex == b.length;
-            if (aEnd || bEnd) {
-                for (int i = index + 1; i < totalLength; i++) {
-                    result[i] = aEnd.equals(Boolean.TRUE) ? b[bIndex] : a[aIndex];
-                    if (aEnd)
-                        aIndex++;
-                    else
-                        bIndex++;
-                }
-                return result;
-            }
-            index++;
-        }
-        return result;
-    }
 }
