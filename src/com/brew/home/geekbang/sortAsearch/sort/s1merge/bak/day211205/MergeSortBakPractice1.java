@@ -10,11 +10,11 @@ public class MergeSortBakPractice1 {
     public static void main(String[] args) {
         int[] a = new int[]{1, 5, 3, 4, 8};
         int[] temp = new int[5];
-        mergeSort(a, 0, 4, temp);
+        new MergeSortBakPractice1().mergeSort(a, 0, 4, temp);
         System.out.println(Arrays.toString(a));
     }
 
-    public static void mergeSort(int[] origin, int first, int last, int[] tmp) {
+    void mergeSort(int[] origin, int first, int last, int[] tmp) {
         if (first >= last) {
             return;
         }
@@ -24,11 +24,12 @@ public class MergeSortBakPractice1 {
         mergeTwoSortedArray(origin, first, mid, last, tmp);
     }
 
-    private static void mergeTwoSortedArray(int[] origin, int first, int mid, int last, int[] tmp) {
+    void mergeTwoSortedArray(int[] origin, int first, int mid, int last, int[] tmp) {
         //1. 合并两个有序数组
         int leftIndex = first;
         int rightIndex = mid + 1;
         int tmpArrIndex = 0;
+        //不要一上来就考虑各种边界情况，先假设两边的数组都各有3个元素
         while (leftIndex <= mid && rightIndex <= last) {
             if (origin[leftIndex] < origin[rightIndex]) {
                 tmp[tmpArrIndex++] = origin[leftIndex++];
