@@ -7,7 +7,7 @@ import java.util.Arrays;
  *
  * @author shaogz
  */
-public class CourtingSort {
+public class CountingSort {
 
     public static void main(String[] args) {
         //步骤
@@ -15,7 +15,7 @@ public class CourtingSort {
         // C[6]的下标是A[8]的值，C[6]的值是A[8]内每个值的元素个数
         //2. 对C[5] 顺序求和
         //3. 倒序遍历A[8], 逐个拿到当前元素在c[5]中的值，即小于等于当前元素的个数，进而得到当前元素在有序数组中的位置
-        int[] sorted = new CourtingSort().courtingSort(new int[] {2, 5, 3, 0, 2, 3, 0, 3}, 5);
+        int[] sorted = new CountingSort().courtingSort(new int[] {2, 5, 3, 0, 2, 3, 0, 3}, 5);
         System.out.println(Arrays.toString(sorted));
     }
 
