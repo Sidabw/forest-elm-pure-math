@@ -43,13 +43,19 @@ public class MergeSort {
 //        System.out.println(JSONArray.toJSONString(a));
 //        System.out.println(JSONArray.toJSONString(temp));
 
-        int[] a = new int[]{1, 5, 3, 4, 8};
-        //两个有序数组合并的时候使用，不用每次都创建新的temp[]出来
-        int[] temp = new int[5];
-        mergeSort(a, 0, 4, temp);
-        System.out.println(Arrays.toString(a));
-        System.out.println(Arrays.toString(temp));
+        // int[] a = new int[]{1, 5, 3, 4, 8};
+        // //两个有序数组合并的时候使用，不用每次都创建新的temp[]出来
+        // int[] temp = new int[5];
+        // mergeSort(a, 0, 4, temp);
+        // System.out.println(Arrays.toString(a));
+        // System.out.println(Arrays.toString(temp));
 
+        int[] a = new int[]{11, 8, 3, 9, 7, 1, 2, 5};
+        int[] tmp = new int[8];
+        mergeSort(a, 0, 7, tmp);
+        //第一次进入sortedArrayMerged2函数时，first=0, mid=0, last=1
+        //第二次进入sortedArrayMerged2函数时，first=2, mid=2, last=3
+        System.out.println(Arrays.toString(a));
     }
 
     public static void mergeSort(int[] a, int first, int last, int[] temp) {

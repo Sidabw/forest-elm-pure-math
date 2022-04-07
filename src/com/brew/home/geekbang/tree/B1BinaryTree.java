@@ -25,9 +25,9 @@ public class B1BinaryTree {
     public static void main(String[] args) {
         Node root = buildTree();
        // preOrder(root);
-       inOrder(root);
-        // postOrder(root);
-//        levelOrder(root);
+       // inOrder(root);
+        postOrder(root);
+       // levelOrder(root);
     }
 
     //前序遍历(先打印当前节点，再打印左子树，再打印右子树)
