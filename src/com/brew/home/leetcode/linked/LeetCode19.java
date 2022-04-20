@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.leetcode;
+package com.brew.home.leetcode.linked;
 
 import com.brew.home.common.ListNode;
 
@@ -39,6 +39,11 @@ public class LeetCode19 {
     //思路1
     //pass one， 拿到 linked list 的size，对应计算出n-th from start
     //pass two，删除n-th元素
+
+    //思路2
+    //pass one，遍历的同时压入栈
+    //pass two，对栈一直执行pop操作，直到拿到待删除节点的前置节点。
+    //总结，都是2n的时间复杂度，顶多第二种处理起来优雅写；
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode cur = head;

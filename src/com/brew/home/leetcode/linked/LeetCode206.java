@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.leetcode;
+package com.brew.home.leetcode.linked;
 
 
 
@@ -63,6 +63,26 @@ public class LeetCode206 {
         System.out.println(res);
     }
 
+    //输入: 1->2->3->4->5->NULL
+    //输出: 5->4->3->2->1->NULL
+    public static ListNode reverseList2(ListNode cur) {
+        //在遍历的过程中，改变指针的方向。
+        if (cur == null) return null;
+
+        ListNode pre = null;
+        ListNode next = null;
+        for (; ; ) {
+            next = cur.next;
+            cur.next = pre;//当前节点向后指，改为向前指
+            pre = cur;//当前的cur下，就是下一个节点的pre;
+            if (next == null) return cur;
+            cur = next;
+        }
+
+        //画图的tmp
+        //两个箭头，分别是如何遍历、如何反转，对应代码的1 4 5三行和 2 3 两行
+    }
+
     public ListNode reverseList(ListNode head) {
         //简单的，放到ArrayList中操作.效率最低。
         if (head == null) return null;
@@ -78,22 +98,5 @@ public class LeetCode206 {
             cur = cur.next;
         }
         return head2;
-    }
-
-    //输入: 1->2->3->4->5->NULL
-    //输出: 5->4->3->2->1->NULL
-    public static ListNode reverseList2(ListNode cur) {
-        //在遍历的过程中，改变指针的方向。
-        if (cur == null) return null;
-
-        ListNode pre = null;
-        ListNode next = null;
-        for (; ; ) {
-            next = cur.next;
-            cur.next = pre;//把当前向后指的指针改为向前指。
-            pre = cur;//当前的cur下，就是下一个节点的pre;
-            if (next == null) return cur;
-            cur = next;
-        }
     }
 }

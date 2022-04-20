@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.leetcode;
+package com.brew.home.leetcode.linked;
 
 import com.brew.home.common.ListNode;
 
@@ -69,6 +69,7 @@ public class LeetCode876 {
             size++;
             cur = cur.next;
         }
+        //这里为什么 +1 -1 已经不记得了，建议看：com.brew.home.tmp.day211124LeetCode876
         int index = size / 2 + 1 - 1;//index start from 0
 
         int curIndex = 0;
