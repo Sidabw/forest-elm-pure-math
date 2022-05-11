@@ -82,21 +82,4 @@ public class LeetCode206 {
         //画图的tmp
         //两个箭头，分别是如何遍历、如何反转，对应代码的1 4 5三行和 2 3 两行
     }
-
-    public ListNode reverseList(ListNode head) {
-        //简单的，放到ArrayList中操作.效率最低。
-        if (head == null) return null;
-        ArrayList<Integer> result = new ArrayList<>();
-        while (head != null) {
-            result.add(head.val);
-            head = head.next;
-        }
-        ListNode head2 = new ListNode(result.get(result.size() - 1));
-        ListNode cur = head2;
-        for (int i = result.size() - 2; i >= 0; i--) {
-            cur.next = new ListNode(result.get(i));
-            cur = cur.next;
-        }
-        return head2;
-    }
 }

@@ -58,26 +58,31 @@ public class LeetCode876 {
         //        listNode2.setNext(listNode3);
         //        listNode3.setNext(listNode4);
         //        listNode4.setNext(listNode5);
-        ListNode listNode = middleNode(listNode1);
+        ListNode listNode = calMidNode(listNode1);
         System.out.println(listNode);
     }
 
-    public static ListNode middleNode(ListNode head) {
-        ListNode cur = head;
-        int size = 0;
-        while (cur != null) {
-            size++;
-            cur = cur.next;
+    //依然是快慢指针
+    private static ListNode calMidNode(ListNode head) {
+        if (head == null) {
+            return null;
         }
-        //这里为什么 +1 -1 已经不记得了，建议看：com.brew.home.tmp.day211124LeetCode876
-        int index = size / 2 + 1 - 1;//index start from 0
+        ListNode nodeTortoise = head;
+        ListNode nodeRabbit = head;
 
-        int curIndex = 0;
-        for (; ; ) {
-            if (curIndex++ == index)
-                return head;
-            head = head.next;
+        ListNode nodeTortoiseTmp;
+        while (true) {
+            nodeTortoiseTmp = nodeTortoise.next;
+            if (nodeTortoiseTmp == null) {
+                return nodeRabbit;
+            }
+            nodeTortoise = nodeTortoise.next.next;
+            if (nodeTortoise == null) {
+                return nodeRabbit.next;
+            }
+            nodeRabbit = nodeRabbit.next;
         }
+
     }
 
 }
