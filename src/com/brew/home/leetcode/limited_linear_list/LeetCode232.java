@@ -28,18 +28,10 @@ public class LeetCode232 {
 
         queue.push(1);
         queue.push(2);
-        System.out.println(queue.peek());  // 返回 1
-        System.out.println(queue.pop());   // 返回 1
-        System.out.println(queue.empty()); // 返回 false
-
-
-
-        // MyStack myStack = new MyStack();
-        // myStack.push(1);
-        // myStack.push(2);
-        // System.out.println(myStack.top()); // returns 2
-        // System.out.println(myStack.pop()); // returns 2
-        // System.out.println(myStack.empty()); // returns false
+        assert queue.peek() == 1;
+        boolean popped = queue.pop() == 1;
+        assert popped;
+        assert !queue.empty();
     }
 
 }
@@ -70,7 +62,7 @@ class MyQueue {
     //出队的时候又发生了push没关系，就push到s1里就可以了，只要在s2空了的情况下再去反转s1就ok。
     public int pop() {
         if (s2.empty()) {
-            //反转s1
+            //反转s1，写入s2
             while (!s1.empty()) {
                 s2.push(s1.pop());
             }
@@ -80,6 +72,7 @@ class MyQueue {
 
     /**
      * Get the front element.
+     * <p> 感觉这个字段没必要吧，类似pop的操作即可
      */
     public int peek() {
         if (!s2.isEmpty()) {
@@ -92,6 +85,7 @@ class MyQueue {
      * Returns whether the queue is empty.
      */
     public boolean empty() {
+        System.out.println("is empty?");
         return s2.empty() && s1.empty();
     }
 }
