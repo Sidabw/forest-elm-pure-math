@@ -43,6 +43,13 @@ public class LeetCode496 {
      * @Date: 2021/12/5 1:31 PM
      **/
     private static int[] findFirstBiggerEl2(int[] nums1, int[] nums2) {
+        /*
+        * 问题的关键在于，如何遍历一次nums2,就能得到nums2的每个元素及该元素右侧第一个更大元素。
+        * 这种映射，肯定是放到map哈希表中，这点没有疑问。
+        * 如何遍历一次就得到呢？右侧第一个更大，首选单调栈【栈顶元素最小，顺序往下变大】
+        * 关键在于倒序遍历，倒序的原因是找比当前元素右边第一个更大，那你就得保证右边的元素是已经处理过的。
+        * ...
+        * */
         Stack<Integer> stackAsc = new Stack<>();
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = nums2.length - 1 ; i>=0; i--) {
