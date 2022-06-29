@@ -11,6 +11,7 @@
 package com.brew.home.geekbang.tree;
 
 import java.util.ArrayDeque;
+import java.util.Queue;
 
 /**
  * 〈一句话功能简述〉:
@@ -63,7 +64,7 @@ public class B1BinaryTree {
 
     //分层遍历
     public static void levelOrder(Node root) {
-        ArrayDeque<Node> nodes = new ArrayDeque<>();
+        Queue<Node> nodes = new ArrayDeque<>();
         nodes.offer(root);
         while (!nodes.isEmpty()) {
             Node poll = nodes.poll();
@@ -108,6 +109,34 @@ public class B1BinaryTree {
 
         Node left3 = new Node(9);
         Node right3 = new Node(12);
+        right1.left = left3;
+        right1.right = right3;
+
+        Node left4 = new Node(2);
+        left2.left = left4;
+        return root;
+    }
+
+    public static Node buildTree2() {
+        /*
+        10
+     6      11
+   3   7   9  13
+ 2
+        */
+        Node root = new Node(10);
+        Node left1 = new Node(6);
+        Node right1 = new Node(11);
+        root.left = left1;
+        root.right = right1;
+
+        Node left2 = new Node(3);
+        Node right2 = new Node(7);
+        left1.left = left2;
+        left1.right = right2;
+
+        Node left3 = new Node(9);
+        Node right3 = new Node(13);
         right1.left = left3;
         right1.right = right3;
 

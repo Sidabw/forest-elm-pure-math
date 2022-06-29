@@ -57,22 +57,7 @@ public class BfsMain extends Graph{
 
     public static void main(String[] args) {
         BfsMain graph = new BfsMain(8);
-        //一度
-        graph.addEdge(0, 3);
-        graph.addEdge(0, 1);
-        //二度
-        graph.addEdge(1, 4);
-        graph.addEdge(1, 2);
-        graph.addEdge(3, 4);
-        //三度
-        graph.addEdge(2, 5);
-        graph.addEdge(4, 5);
-        graph.addEdge(4, 6);
-        //四度
-        graph.addEdge(5, 7);
-        graph.addEdge(6, 7);
-
-
+        GraphCommon.init(graph);
         graph.bfs(0, 7);
     }
 
