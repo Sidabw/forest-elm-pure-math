@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.tree;
+package com.brew.home.geekbang.tree.binary;
 
 /**
  * @author shaogz

@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.tree;
+package com.brew.home.geekbang.tree.binary;
 
 /**
  * 使用数组存储二叉树

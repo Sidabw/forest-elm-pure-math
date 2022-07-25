@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.geekbang.tree;
+package com.brew.home.geekbang.tree.binary;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

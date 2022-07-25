@@ -1,6 +1,6 @@
-package com.brew.home.geekbang.tree.exercise;
+package com.brew.home.geekbang.tree.binary.exercise;
 
-import com.brew.home.geekbang.tree.Node;
+import com.brew.home.geekbang.tree.binary.Node;
 
 import java.util.ArrayList;
 import java.util.List;
