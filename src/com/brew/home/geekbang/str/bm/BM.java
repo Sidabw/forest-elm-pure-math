@@ -17,6 +17,11 @@ import java.util.Arrays;
  */
 public class BM {
 
+    public static void main(String[] args) {
+        String mainStr = "avadfaeterutysdfgaewhbdaffa";
+        String subStr = "ut";
+        System.out.println(new BM().bm(mainStr.toCharArray(), mainStr.length(), subStr.toCharArray(), subStr.length()));
+    }
 
     // a,b表示主串和模式串；n，m表示主串和模式串的长度。
     public int bm(char[] a, int n, char[] b, int m) {
