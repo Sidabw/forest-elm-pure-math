@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.recall;
+package com.brew.home.geekbang.algo4.recall;
 
 /**
  * 八皇后问题，程序员小灰

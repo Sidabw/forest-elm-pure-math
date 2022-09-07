@@ -1,6 +1,6 @@
-package com.brew.home.geekbang.recall;
+package com.brew.home.geekbang.algo4.recall;
 
-import static com.brew.home.geekbang.recall.Queue8_1_FindFirst.*;
+import static com.brew.home.geekbang.algo4.recall.Queue8_1_FindFirst.*;
 
 /**
  * 八皇后，找到所有排列。
@@ -33,11 +33,10 @@ public class Queue8_2_FindAll {
                 chessBoard[i][y] = 1;
                 /*
                  1. settleQueen(y+1) 递归进入下一层
-                 2. 递归如果返回true，说明下层已找到解法，无需继续循环
+                 2. 下层找到解法后，继续循环
                  */
                 settleQueen(y+1);
             }
         }
-        //如果当前行遍历完了，则return false，回溯到前一行。前一行i+1，到下一个格子
     }
 }
