@@ -23,8 +23,7 @@ public class Knapsack01MaxVal2 {
                 //value[i] 当前这个物品的价值
                 //j表示的累加的重量，maxVales[]表示的是累加的价值
 
-                //maxVales[j+weight[i]] 表示把上层的状态转移下来，
-
+                //表示把上层的状态转移下来，
                 int v1 = maxVales[j] + value[i];
                 int v2 = maxVales[j+weight[i]];
                 if (v1 > v2) {
