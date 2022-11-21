@@ -3,15 +3,7 @@ package com.brew.home.geekbang.p7advanced;
 public class BitMapDemo {
 
     public static void main(String[] args) {
-//        BitMap bitMap = new BitMap(20);
-//        bitMap.set(15);
 
-        char a = 0;
-        char b = 1;
-        char c = 15;
-        System.out.println(Integer.toBinaryString(1 << a));
-        System.out.println(Integer.toBinaryString(1 << b));
-        System.out.println(Integer.toBinaryString(1 << c));
     }
 }
 
