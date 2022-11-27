@@ -13,10 +13,10 @@ import java.util.Queue;
  * @create 2021/3/7
  * @since 1.0.0
  */
-public class BfsMain extends Graph{
+public class BfsMain extends GraphUndirected {
 
-    public BfsMain(int v) {
-        super(v);
+    public BfsMain(GraphUndirected graphUndirected) {
+        super(graphUndirected.v, graphUndirected.adj);
     }
 
     public void bfs(int s, int t) {
@@ -56,9 +56,8 @@ public class BfsMain extends Graph{
 
 
     public static void main(String[] args) {
-        BfsMain graph = new BfsMain(8);
-        GraphCommon.init(graph);
-        graph.bfs(0, 7);
+        GraphUndirected graphUndirected = GraphUndirected.buildOne();
+        new BfsMain(graphUndirected).bfs(0, 7);
     }
 
 }

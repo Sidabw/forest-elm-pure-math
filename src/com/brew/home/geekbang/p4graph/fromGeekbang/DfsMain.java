@@ -1,11 +1,12 @@
 package com.brew.home.geekbang.p4graph.fromGeekbang;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 
-public class DfsMain extends Graph{
+public class DfsMain extends GraphUndirected {
 
-    public DfsMain(int v) {
-        super(v);
+    public DfsMain(GraphUndirected graphUndirected) {
+        super(graphUndirected.v, graphUndirected.adj);
     }
 
     /**
@@ -50,8 +51,7 @@ public class DfsMain extends Graph{
     }
 
     public static void main(String[] args) {
-        DfsMain graph = new DfsMain(8);
-        GraphCommon.init(graph);
-        graph.dfs(0, 7);
+        GraphUndirected graphUndirected = GraphUndirected.buildOne();
+        new DfsMain(graphUndirected).dfs(0, 7);
     }
 }
