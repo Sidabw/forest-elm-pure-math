@@ -1,18 +1,17 @@
 package com.brew.home.geekbang.p4graph.fromGeekbang;
 
 import java.util.Arrays;
-import java.util.LinkedList;
 
-public class DfsMain extends GraphUndirected {
-
-    public DfsMain(GraphUndirected graphUndirected) {
-        super(graphUndirected.v, graphUndirected.adj);
-    }
+public class L2DfsMain extends GraphUndirected {
 
     /**
      * 相比BFS多了的一个变量，用于跳出递归
      */
     private boolean found;
+
+    public L2DfsMain(GraphUndirected graphUndirected) {
+        super(graphUndirected.v, graphUndirected.adj);
+    }
 
     public void dfs(int w, int t) {
         boolean[] visited = new boolean[v];
@@ -52,6 +51,6 @@ public class DfsMain extends GraphUndirected {
 
     public static void main(String[] args) {
         GraphUndirected graphUndirected = GraphUndirected.buildOne();
-        new DfsMain(graphUndirected).dfs(0, 7);
+        new L2DfsMain(graphUndirected).dfs(0, 7);
     }
 }

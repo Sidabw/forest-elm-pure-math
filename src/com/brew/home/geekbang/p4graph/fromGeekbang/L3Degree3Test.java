@@ -8,10 +8,10 @@ import java.util.Queue;
 /**
  * 找到3度好友关系
  */
-public class Degree3Test extends GraphUndirected {
+public class L3Degree3Test extends GraphUndirected {
 
 
-    public Degree3Test(GraphUndirected graphUndirected) {
+    public L3Degree3Test(GraphUndirected graphUndirected) {
         super(graphUndirected.v, graphUndirected.adj);
     }
 
@@ -85,6 +85,6 @@ public class Degree3Test extends GraphUndirected {
 
     public static void main(String[] args) {
         GraphUndirected graphUndirected = GraphUndirected.buildOne();
-        new Degree3Test(graphUndirected).get3DegreeFriends(0);
+        new L3Degree3Test(graphUndirected).get3DegreeFriends(0);
     }
 }

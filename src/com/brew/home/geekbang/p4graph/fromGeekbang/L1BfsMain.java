@@ -13,9 +13,9 @@ import java.util.Queue;
  * @create 2021/3/7
  * @since 1.0.0
  */
-public class BfsMain extends GraphUndirected {
+public class L1BfsMain extends GraphUndirected {
 
-    public BfsMain(GraphUndirected graphUndirected) {
+    public L1BfsMain(GraphUndirected graphUndirected) {
         super(graphUndirected.v, graphUndirected.adj);
     }
 
@@ -30,7 +30,7 @@ public class BfsMain extends GraphUndirected {
 
         int[] prev = new int[v];
         Arrays.fill(prev, -1);
-
+        //using queue. poll from head, add into the last
         while (!queue.isEmpty()) {
             int w = queue.poll();
             for (int q : adj[w]) {
@@ -57,7 +57,7 @@ public class BfsMain extends GraphUndirected {
 
     public static void main(String[] args) {
         GraphUndirected graphUndirected = GraphUndirected.buildOne();
-        new BfsMain(graphUndirected).bfs(0, 7);
+        new L1BfsMain(graphUndirected).bfs(0, 7);
     }
 
 }
