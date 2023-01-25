@@ -21,7 +21,8 @@ public class GraphDirected extends GraphUndirected{
         adj[s].add(t);
     }
 
-    public static GraphUndirected buildOne(){
+    public static GraphDirected buildOne(){
+        //因为addEdge已经重写了，所以当前是一个GraphDirected，则父类init方法生成的就是一个有向图
         GraphDirected graphUndirected = new GraphDirected(8);
         graphUndirected.init();
         return graphUndirected;

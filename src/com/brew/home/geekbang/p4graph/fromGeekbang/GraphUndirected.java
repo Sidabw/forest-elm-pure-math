@@ -3,6 +3,7 @@ package com.brew.home.geekbang.p4graph.fromGeekbang;
 import java.util.LinkedList;
 
 public class GraphUndirected { // 无向图
+
     protected int v; // 顶点的个数
     protected LinkedList<Integer>[] adj; // 邻接表
 
