@@ -2,22 +2,18 @@ package com.brew.home.geekbang.p7advanced.topo;
 
 import com.brew.home.geekbang.p4graph.fromGeekbang.GraphDirected;
 
-import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 
-public class TopologySortPractice extends GraphDirected {
+public class TopologySortKahn extends GraphDirected {
 
-    public TopologySortPractice(int v, LinkedList<Integer>[] adj) {
-        super(v, adj);
-    }
-
-    public TopologySortPractice(int v) {
+    public TopologySortKahn(int v) {
         super(v);
     }
 
-    public void topologySortByKahn() {
+    public void sort() {
+        System.out.print(this.getClass().getSimpleName());
         //1. 创建入度表
         //2. 找到0入度的，写入Deque
         //3. 操作入度表和Deque完成拓扑排序
@@ -42,7 +38,7 @@ public class TopologySortPractice extends GraphDirected {
         deque.add(origin);
         while (!deque.isEmpty()) {
             Integer el = deque.pollFirst();
-            System.out.println("->" + el);
+            System.out.print("->" + el);
             for (int i = 0; i < adj[el].size(); i++) {
                 int downstreamEl = adj[el].get(i);
                 inDegrees[downstreamEl]--;
@@ -53,17 +49,10 @@ public class TopologySortPractice extends GraphDirected {
             }
         }
     }
-    public static TopologySortPractice buildOne(){
+    public static TopologySortKahn buildOne(){
         //因为addEdge已经重写了，所以当前是一个GraphDirected，则父类init方法生成的就是一个有向图
-        TopologySortPractice graphDirected = new TopologySortPractice(8);
+        TopologySortKahn graphDirected = new TopologySortKahn(8);
         graphDirected.init();
         return graphDirected;
     }
-
-    public static void main(String[] args) {
-        TopologySortPractice directedGraph = TopologySortPractice.buildOne();
-        directedGraph.topologySortByKahn();
-    }
-
-
 }
