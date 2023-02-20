@@ -35,7 +35,6 @@ public class TopologySortDfs extends GraphDirected {
             }
         }
 
-
         visited = new boolean[v];
 
         for (int i = 0; i<v; i++) {
