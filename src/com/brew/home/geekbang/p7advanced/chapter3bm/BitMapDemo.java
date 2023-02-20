@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.p7advanced.bm;
+package com.brew.home.geekbang.p7advanced.chapter3bm;
 
 public class BitMapDemo {
 

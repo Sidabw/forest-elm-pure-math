@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.p7advanced.topo;
+package com.brew.home.geekbang.p7advanced.chapter1topo;
 
 public class TopologySortMain {
 

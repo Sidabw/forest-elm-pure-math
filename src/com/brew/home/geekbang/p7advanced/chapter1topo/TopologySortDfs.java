@@ -1,8 +1,7 @@
-package com.brew.home.geekbang.p7advanced.topo;
+package com.brew.home.geekbang.p7advanced.chapter1topo;
 
 import com.brew.home.geekbang.p4graph.fromGeekbang.GraphDirected;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 
 public class TopologySortDfs extends GraphDirected {
