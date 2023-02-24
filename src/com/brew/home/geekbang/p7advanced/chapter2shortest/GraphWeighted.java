@@ -1,64 +1,8 @@
 package com.brew.home.geekbang.p7advanced.chapter2shortest;
 
-
 import java.util.LinkedList;
 
-public class Tmp1 {
-
-
-}
-
-// 因为Java提供的优先级队列，没有暴露更新数据的接口，所以我们需要重新实现一个
-class PriorityQueue extends java.util.PriorityQueue<Vertex> { // 根据vertex.dist构建小顶堆
-    private Vertex[] nodes;
-    private int count;
-
-    public PriorityQueue(int v) {
-        this.nodes = new Vertex[v + 1];
-        this.count = v;
-    }
-
-    @Override
-    public Vertex poll() {
-        return super.poll();
-    }
-
-    @Override
-    public boolean add(Vertex vertex) {
-        return super.add(vertex);
-    }
-
-    // 更新结点的值，并且从下往上堆化，重新符合堆的定义。时间复杂度O(logn)。
-    public void update(Vertex vertex) {
-        // TODO: 留给读者实现...
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return super.isEmpty();
-    }
-
-}
-class Edge {
-    public int sid; // 边的起始顶点编号
-    public int tid; // 边的终止顶点编号
-    public int w; // 权重
-    public Edge(int sid, int tid, int w) {
-        this.sid = sid;
-        this.tid = tid;
-        this.w = w;
-    }
-}
-// 下面这个类是为了dijkstra实现用的
-class Vertex {
-    public int id; // 顶点编号ID
-    public int dist; // 从起始顶点到这个顶点的距离
-    public Vertex(int id, int dist) {
-        this.id = id;
-        this.dist = dist;
-    }
-}
-class GraphWeighted { // 有向有权图的邻接表表示
+public class GraphWeighted { // 有向有权图的邻接表表示
     private LinkedList<Edge> adj[]; // 邻接表
 
     private int v; // 顶点个数
@@ -82,7 +26,7 @@ class GraphWeighted { // 有向有权图的邻接表表示
         for (int i = 0; i < this.v; ++i) {
             vertexes[i] = new Vertex(i, Integer.MAX_VALUE);
         }
-        PriorityQueue queue = new PriorityQueue(this.v);// 小顶堆
+        PriorityQueueInGraph<Vertex> queue = new PriorityQueueInGraph<>(this.v);// 小顶堆
         boolean[] inqueue = new boolean[this.v]; // 标记是否进入过队列
         vertexes[s].dist = 0;
         queue.add(vertexes[s]);
@@ -123,6 +67,3 @@ class GraphWeighted { // 有向有权图的邻接表表示
     }
 
 }
-
-
-
