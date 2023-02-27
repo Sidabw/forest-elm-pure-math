@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.p7advanced.chapter2shortest;
+package com.brew.home.geekbang.p7advanced.chapter2dijkstra;
 
 public class Edge {
     public int sid; // 边的起始顶点编号
