@@ -12,6 +12,9 @@ public class Vertex {
      * <p> 所以这个叫id就很不合适.... 叫i多亲切。
      */
     public int id; //
+
+    public int qIndex;
+
     public int dist; // 从起始顶点到这个顶点的距离
     public Vertex(int id, int dist) {
         this.id = id;

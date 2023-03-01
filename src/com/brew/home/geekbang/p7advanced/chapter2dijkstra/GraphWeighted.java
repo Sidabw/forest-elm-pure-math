@@ -23,14 +23,14 @@ public class GraphWeighted { // 有向有权图的邻接表表示
     public void dijkstra(int s, int t) { // 从顶点s到顶点t的最短路径
         int[] predecessor = new int[this.v]; // 用来还原最短路径
         Vertex[] vertexes = new Vertex[this.v];
-        for (int i = 0; i < this.v; ++i) {
+        for (int i = 1; i < this.v; ++i) {
             //因为优先级队列的i会+1，所以暂且假定图是从1开始，没有0
             vertexes[i] = new Vertex(i, Integer.MAX_VALUE);
         }
-        PriorityQueueInGraph queue = new PriorityQueueInGraph(this.v);// 小顶堆
-        boolean[] inqueue = new boolean[this.v]; // 标记是否进入过队列
+        PriorityQueueInGraph2 queue = new PriorityQueueInGraph2(this.v);// 小顶堆
         vertexes[s].dist = 0;
         queue.add(vertexes[s]);
+        boolean[] inqueue = new boolean[this.v]; // 标记是否进入过队列
         inqueue[s] = true;
         while (!queue.isEmpty()) {
             Vertex minVertex= queue.poll(); // 取堆顶元素并删除
@@ -71,6 +71,7 @@ public class GraphWeighted { // 有向有权图的邻接表表示
     }
 
     public static void main(String[] args) {
+        //相比与课程里的从0开始，这里是从1开始，实在没力气再测了
         GraphWeighted g = new GraphWeighted(7);
         g.addEdge(1,2,10);
         g.addEdge(1,5,15);
@@ -80,8 +81,8 @@ public class GraphWeighted { // 有向有权图的邻接表表示
         g.addEdge(4,6,12);
         g.addEdge(3,6,5);
         g.addEdge(5,6,10);
-
         g.dijkstra(1,6);
+
     }
 
 }
