@@ -14,7 +14,7 @@ package com.brew.home.geekbang.p3tree.binary;
 /**
  * 〈一句话功能简述〉:
  * 〈二叉查找树的插入、查找、删除（logn）〉
- *
+ * 20230302补充：上面说的logn是指平衡二叉查找树。
  * @author feiyi
  * @create 2020/6/27
  * @since 1.0.0
