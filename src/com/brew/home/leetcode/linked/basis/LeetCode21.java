@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.leetcode.linked;
+package com.brew.home.leetcode.linked.basis;
 
 import com.brew.home.common.ListNode;
 
@@ -21,20 +21,17 @@ import com.brew.home.common.ListNode;
  * @since 1.0.0
  */
 public class LeetCode21 {
+
     /**
-     * @param
-     * @Description 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
-     * 示例：
-     * 输入：1->2->4, 1->3->4
-     * 输出：1->1->2->3->4->4
-     * <p>
-     * 来源：力扣（LeetCode）
-     * 链接：https://leetcode-cn.com/problems/merge-two-sorted-lists
+     * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
+     * <p>示例：
+     * <p> 输入：1->2->4, 1->3->4
+     * <p> 输出：1->1->2->3->4->4
+     * 链接：<a href="https://leetcode-cn.com/problems/merge-two-sorted-lists">力扣（LeetCode）21</a>
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-     * @return: void
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2019/7/22 4:51 PM
+     * @since 2.0.5
+     * @author feiyi
+     * @date 2019/7/22 4:51 PM
      **/
     public static void main(String[] args){
         ListNode listNode1 = new ListNode(1);

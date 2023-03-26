@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.leetcode.linked;
+package com.brew.home.leetcode.linked.basis;
 
 import com.brew.home.common.ListNode;
 
