@@ -22,7 +22,7 @@ package com.brew.home.leetcode;
  */
 public class LeetCode7 {
     /**
-     * @param
+     * @param d 
      * @Description 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
      * <p>
      * 示例 1:

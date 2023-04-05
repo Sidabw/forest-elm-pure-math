@@ -1,7 +1,6 @@
 package com.brew.home.tmp.day211205;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Stack;
 
 /**

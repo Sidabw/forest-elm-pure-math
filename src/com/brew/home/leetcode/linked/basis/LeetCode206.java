@@ -14,7 +14,6 @@ package com.brew.home.leetcode.linked.basis;
 
 import com.brew.home.common.ListNode;
 
-import java.util.ArrayList;
 
 /**
  * 〈一句话功能简述〉:

@@ -1,5 +1,12 @@
 package com.brew.home.leetcode.list;
 
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+import com.brew.home.geekbang.p1sortAsearch.sort.s5quick.QuickSortGeekBang;
+
 public class LeetCode15 {
 
     public static void main(String[] args) {
@@ -12,5 +19,45 @@ public class LeetCode15 {
 
         System.out.println(1);
 
+
+    }
+
+
+    public static List<List<Integer>> threeSum(int[] nums) {
+        new QuickSortGeekBang().quick(nums, 0, nums.length-1);
+
+        LinkedList<List<Integer>> result = new LinkedList<List<Integer>>();
+        for (int a = 0; a < nums.length - 2; a++) {
+
+            Integer preBval = null;
+            for(int b = 1; b < nums.length - 1; b++) {
+                if (preBval != null && preBval == nums[b]) {
+                    continue;
+                }
+
+                
+                int for3Index;
+                if(!result.isEmpty()) {
+                    Integer c0 = result.getLast().get(2);
+                    for3Index = c0;
+                } else {
+                    for3Index = nums.length - 1;
+                }
+
+                for(int c = for3Index; c > b; c--) {
+
+                    if (nums[a] + nums[b] + nums[c] == 0) {
+                        result.add(Arrays.asList(nums[a], nums[b], nums[c]));
+                        break;
+                    }
+
+
+                }
+            
+                preBval = nums[b];
+            }
+        }
+
+        return null;
     }
 }

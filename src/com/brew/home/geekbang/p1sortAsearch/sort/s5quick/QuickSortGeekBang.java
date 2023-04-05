@@ -16,7 +16,7 @@ public class QuickSortGeekBang {
         System.out.println(Arrays.toString(arr));
     }
 
-    void quick(int[] arr, int p, int r) {
+    public void quick(int[] arr, int p, int r) {
         if (p >= r) {
             return;
         }

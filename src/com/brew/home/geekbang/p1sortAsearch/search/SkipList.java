@@ -24,9 +24,10 @@ public class SkipList {
         // skipList.insert(18);
 
         skipList.find(4);
+        System.out.println(1222);
     }
 
-    private static final float SKIPLIST_P = 0.5f;
+    // private static final float SKIPLIST_P = 0.5f;
     private static final int MAX_LEVEL = 16;
   
     private int levelCount = 1;
@@ -107,13 +108,13 @@ public class SkipList {
     //        50%的概率返回 1
     //        25%的概率返回 2
     //      12.5%的概率返回 3 ...
-    private int randomLevel() {
-      int level = 1;
+    // private int randomLevel() {
+    //   int level = 1;
   
-      while (Math.random() < SKIPLIST_P && level < MAX_LEVEL)
-        level += 1;
-      return level;
-    }
+    //   while (Math.random() < SKIPLIST_P && level < MAX_LEVEL)
+    //     level += 1;
+    //   return level;
+    // }
   
     public void printAll() {
       Node p = head;
