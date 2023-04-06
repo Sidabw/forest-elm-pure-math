@@ -24,7 +24,6 @@ public class SkipList {
         // skipList.insert(18);
 
         skipList.find(4);
-        System.out.println(1222);
     }
 
     // private static final float SKIPLIST_P = 0.5f;

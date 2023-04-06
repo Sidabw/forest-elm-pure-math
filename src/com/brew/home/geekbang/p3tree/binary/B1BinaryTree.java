@@ -25,10 +25,18 @@ public class B1BinaryTree {
 
     public static void main(String[] args) {
         Node root = buildTree();
-       // preOrder(root);
-       // inOrder(root);
+        preOrder(root);
+        System.out.println("^preOrder^------------------------------------------");
+        System.out.println("------------------------------------------");
+        inOrder(root);
+        System.out.println("^inOrder^------------------------------------------");
+        System.out.println("------------------------------------------");
         postOrder(root);
-       // levelOrder(root);
+        System.out.println("^postOrder^------------------------------------------");
+        System.out.println("------------------------------------------");
+        levelOrder(root);
+        System.out.println("^levelOrder^------------------------------------------");
+        System.out.println("------------------------------------------");
     }
 
     //前序遍历(先打印当前节点，再打印左子树，再打印右子树)
