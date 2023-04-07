@@ -3,7 +3,6 @@ package com.brew.home.leetcode.list;
 
 import java.util.*;
 
-import com.brew.home.geekbang.p1sortAsearch.sort.s5quick.QuickSortGeekBang;
 
 public class LeetCode15 {
 
@@ -29,53 +28,52 @@ public class LeetCode15 {
         // int[] nums = new int[]{-1,-1,-1,-2,-2,1,0,0,1,3,3,3,5};
         // int[] nums = new int[]{-1,0,1,2,-1,-4,-2,-3,3,0,4};
         // int[] nums = new int[]{-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6};
-        System.out.println(threeSum(nums));
+        System.out.println(new LeetCode15().threeSum(nums));
     }
 
-
-    public static List<List<Integer>> threeSum(int[] nums) {
-        new QuickSortGeekBang().quick(nums, 0, nums.length-1);
-        if(nums.length<3) {
-            return Collections.emptyList();
-        }
-
-        ArrayList<List<Integer>> result = new ArrayList<List<Integer>>();
-        
-        for (int a = 0; a < nums.length - 2; a++) {
-            int for3Index = nums.length-1;    
-            for(int b = a+1; b < nums.length - 1; b++) {
-
-                for(int c = for3Index; c > b; c--) {
-
-                    //找到命中了
-                    if (nums[a] + nums[b] + nums[c] == 0) {
-
-                        //过滤掉重复的
-                        boolean repeated = false;
-                        if(!result.isEmpty()) {
-                            for(int d = result.size()-1; d >=0 ;d--) {
-                                if(result.get(d).get(0) != nums[a]) {
-                                    break;
-                                }
-
-                                if(result.get(d).get(1) == nums[b] && result.get(d).get(2) == nums[c]) {
-                                    repeated = true;
-                                }
-                            }
-                        }
-                        if(repeated) {
-                            continue;
-                        }
-                        
-                        //没有重复的，yes!!!
-                        result.add(Arrays.asList(nums[a], nums[b], nums[c]));
-                        for3Index = c;
-                        break;
-                    }
+    public List<List<Integer>> threeSum(int[] nums) {
+        int n = nums.length;
+        Arrays.sort(nums);
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        // 枚举 a
+        for (int first = 0; first < n; ++first) {
+            // 需要和上一次枚举的数不相同
+            //sidabw批注：在一个固定的a下，原来代码是已经便利了所有可能的b和c了。
+            if (first > 0 && nums[first] == nums[first - 1]) {
+                continue;
+            }
+            // c 对应的指针初始指向数组的最右端
+            int third = n - 1;
+            int target = -nums[first];
+            // 枚举 b
+            for (int second = first + 1; second < n; ++second) {
+                // 需要和上一次枚举的数不相同
+                if (second > first + 1 && nums[second] == nums[second - 1]) {
+                    continue;
+                }
+                // 需要保证 b 的指针在 c 的指针的左侧
+                //sidabw批注：已确定的a和b下，只会有一个c
+                //nums[second] + nums[third] + nums[first] > 0
+                //因为nums[third]一开始是最大的，然后一直变小变小直到贴近命中值0
+                while (second < third && nums[second] + nums[third] > target) {
+                    --third;
+                }
+                // 如果指针重合，随着 b 后续的增加
+                // 就不会有满足 a+b+c=0 并且 b<c 的 c 了，可以退出循环
+                if (second == third) {
+                    break;
+                }
+                if (nums[second] + nums[third] == target) {
+                    List<Integer> list = new ArrayList<Integer>();
+                    list.add(nums[first]);
+                    list.add(nums[second]);
+                    list.add(nums[third]);
+                    ans.add(list);
                 }
             }
         }
-
-        return result;
+        return ans;
     }
+    
 }
+
