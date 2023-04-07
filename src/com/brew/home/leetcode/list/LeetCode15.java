@@ -38,6 +38,7 @@ public class LeetCode15 {
             int lastEl;
             try {
                 lastEl = numsSet.getLast();
+                System.out.println(1);
             } catch (NoSuchElementException e) {
 
             }
@@ -47,6 +48,8 @@ public class LeetCode15 {
             numsSet.add(num);
         }
 
+        System.out.println(2);
+        System.out.println(3);
         
         
 
