@@ -1,9 +1,7 @@
 package com.brew.home.leetcode.list;
 
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import com.brew.home.geekbang.p1sortAsearch.sort.s5quick.QuickSortGeekBang;
 
@@ -33,6 +31,26 @@ public class LeetCode15 {
 
     public static List<List<Integer>> threeSum(int[] nums) {
         new QuickSortGeekBang().quick(nums, 0, nums.length-1);
+        //费尽心机处理重复元素，打一开始排完序再把重复元素删了不久行了
+
+        LinkedList<Integer> numsSet = new LinkedList<>();
+        for (int num : nums) {
+            int lastEl;
+            try {
+                lastEl = numsSet.getLast();
+            } catch (NoSuchElementException e) {
+
+            }
+            if (numsSet.getLast() != null && numsSet.getLast() == num) {
+                continue;
+            }
+            numsSet.add(num);
+        }
+
+        
+        
+
+
 
         LinkedList<List<Integer>> result = new LinkedList<List<Integer>>();
         for (int a = 0; a < nums.length - 2; a++) {
@@ -52,10 +70,16 @@ public class LeetCode15 {
                     for3Index = nums.length - 1;
                 }
 
+                Integer preCval = null;
                 for(int c = for3Index; c > b; c--) {
+                    if (preCval != null && nums[c] == preCval) {
+                        continue;
+                    }
 
                     if (nums[a] + nums[b] + nums[c] == 0) {
                         result.add(Arrays.asList(nums[a], nums[b], nums[c]));
+                        preBval = nums[b];
+                        preCval = nums[c];
                         break;
                     }
 
