@@ -28,7 +28,6 @@ public class LeetCode21 {
      * <p> 输入：1->2->4, 1->3->4
      * <p> 输出：1->1->2->3->4->4
      * 链接：<a href="https://leetcode-cn.com/problems/merge-two-sorted-lists">力扣（LeetCode）21</a>
-     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      * @since 2.0.5
      * @author feiyi
      * @date 2019/7/22 4:51 PM
