@@ -23,7 +23,7 @@ import com.brew.home.common.ListNode;
 public class LeetCode876 {
 
     /**
-     * 给定一个带有头结点head的非空单链表，返回链表的中间结点。
+     * 给你单链表的头结点 head ，请你找出并返回链表的中间结点。
      * 如果有两个中间结点，则返回第二个中间结点。
      * <p>
      * 示例 1：
@@ -49,17 +49,17 @@ public class LeetCode876 {
      * @Date: 2020/5/26 5:02 PM
      **/
     public static void main(String[] args){
-        ListNode listNode1 = new ListNode(1);
-        ListNode listNode2 = new ListNode(2);
-        //        ListNode listNode3 = new ListNode(3);
-        //        ListNode listNode4 = new ListNode(2);
-        //        ListNode listNode5 = new ListNode(4);
-        listNode1.next = listNode2;
-        //        listNode2.setNext(listNode3);
-        //        listNode3.setNext(listNode4);
-        //        listNode4.setNext(listNode5);
-        ListNode listNode = calMidNode(listNode1);
-        System.out.println(listNode);
+
+        //注意：估计是题目描述有误解，后面改了
+        //改之前：  * 给定一个带有头结点head的非空单链表，返回链表的中间结点。
+        //改之后；  * 给你单链表的头结点 head ，请你找出并返回链表的中间结点。
+        //所以这跟‘带头节点的单链表’没有一毛钱关系
+
+        // ListNode l1 = ListNode.buildCustom(1, 2);
+        ListNode l1 = ListNode.buildCustom(1, 2, 3, 2, 4);
+        ListNode res = calMidNode(l1);
+        ListNode.printBeautify(res);
+
     }
 
     //依然是快慢指针
@@ -67,6 +67,7 @@ public class LeetCode876 {
         if (head == null) {
             return null;
         }
+        //傻逼吧。。。  乌龟是快的，兔子是慢的.....
         ListNode nodeTortoise = head;
         ListNode nodeRabbit = head;
 
