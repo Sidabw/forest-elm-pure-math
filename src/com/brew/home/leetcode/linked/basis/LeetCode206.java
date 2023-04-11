@@ -45,21 +45,13 @@ public class LeetCode206 {
      * @Date: 2020/5/26 9:33 AM
      **/
     public static void main(String[] args){
-        ListNode listNode1 = new ListNode(1);
-        //        ListNode listNode2 = new ListNode(2);
-        //        ListNode listNode3 = new ListNode(3);
-        //        ListNode listNode4 = new ListNode(2);
-        //        ListNode listNode5 = new ListNode(4);
-        //        listNode1.setNext(listNode2);
-        //        listNode2.setNext(listNode3);
-        //        listNode3.setNext(listNode4);
-        //        listNode4.setNext(listNode5);
 
-        //        ListNode listNode = reverseList(listNode1);
-        //        System.out.println(listNode);
+        ListNode l1 = ListNode.buildCustom(1, 2, 3, 2, 4);
+        // ListNode l1 = ListNode.buildCustom(1);
 
-        ListNode res = reverseList2(listNode1);
-        System.out.println(res);
+        ListNode.printBeautify(l1);
+        ListNode res = reverseList2(l1);
+        ListNode.printBeautify(res);
     }
 
     //输入: 1->2->3->4->5->NULL
@@ -75,10 +67,20 @@ public class LeetCode206 {
             cur.next = pre;//当前节点向后指，改为向前指
             pre = cur;//当前的cur下，就是下一个节点的pre;
             if (next == null) return cur;
+
+            //到这一步，原来的链表就已经断了，现在就是cur往前走一步，然后下个循环再把next尖头掰到前面
             cur = next;
         }
 
-        //画图的tmp
-        //两个箭头，分别是如何遍历、如何反转，对应代码的1 4 5三行和 2 3 两行
+        /*
+         ┌────────┐      ┌───────┐      ┌────────┐    ┌────────┐
+────────►│  L1    ├──────►  L2   ├──────►   L3   ├────►   L4   │
+         └────────┘      └───────┘      └────────┘    └────────┘
+             ▲               ▲               ▲
+             │               │               │
+             │               │               │
+             │               │               │
+             PRE            CUR             NEXT
+        */
     }
 }

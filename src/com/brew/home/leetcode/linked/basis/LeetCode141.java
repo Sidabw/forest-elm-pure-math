@@ -22,20 +22,13 @@ import com.brew.home.common.ListNode;
  */
 public class LeetCode141 {
 
-    public static void main(String[] args){}
-    public void test() {
-        ListNode listNode1 = new ListNode(1);
-        ListNode listNode2 = new ListNode(2);
-//        ListNode listNode3 = new ListNode(3);
-//        ListNode listNode4 = new ListNode(2);
-//        ListNode listNode5 = new ListNode(4);
-        listNode1.next = listNode2;
-//        listNode2.setNext(listNode3);
-//        listNode3.setNext(listNode4);
-//        listNode4.setNext(listNode5);
-//
-//        listNode5.next = listNode3;
-        System.out.println(hasCycle(listNode1));
+    public static void main(String[] args){
+        //141:   https://leetcode.cn/problems/linked-list-cycle/
+
+        // ListNode l1 = ListNode.buildCircle();
+        ListNode l1 = ListNode.buildNormal();
+        System.out.println(hasCycle(l1));
+
     }
 
     //解题1
@@ -47,12 +40,13 @@ public class LeetCode141 {
     // ，一个个的坑，一个人一次跳一个坑，一个人一次跳两个坑。等到第二个人快要追上第一个人的时候，只会有两种情况，一是2在1的后面一个坑，
     // 那么再跳一次就追上了，另外一种情况，2在1的前面一个坑，那其实上一次跳2就已经追上1了。
     // 至于2在1后面2个坑或3个坑，画一画就知道，只是多跳一次的问题而已。
-    public boolean hasCycle(ListNode head) {
+    public static boolean hasCycle(ListNode head) {
         if (head == null || head.next == null || head.next.next == null) return false;
         //一人先跳一次
         ListNode slow = head.next;
         ListNode fast = head.next.next;
         for (; ; ) {
+            //必须是拿引用直接比较，不可以取值eq
             if (slow == null || fast == null) return false;
             if (slow == fast) return true;
             slow = slow.next;
