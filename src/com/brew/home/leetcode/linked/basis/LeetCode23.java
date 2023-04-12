@@ -1,6 +1,5 @@
 package com.brew.home.leetcode.linked.basis;
 
-import java.util.Arrays;
 
 import com.brew.home.common.ListNode;
 
@@ -17,7 +16,7 @@ public class LeetCode23 {
     public static ListNode mergeKLists(ListNode[] lists) {
         
         //每次都遍历ListNode[]的所有头节点，找到最小的，记录下来，进入下一次便利。
-        
+
         ListNode dummyHead = new ListNode(0);
         ListNode cur = dummyHead;
 
