@@ -17,11 +17,11 @@ public class LeetCode496 {
      * @Date: 2021/12/5 11:50 AM
      **/
     public static void main(String[] args) {
-        // int[] num1 = new int[]{4, 1, 2};
-        // int[] num2 = new int[]{1, 3, 4, 2};
+        int[] num1 = new int[]{4, 1, 2};
+        int[] num2 = new int[]{1, 3, 4, 2};
 
-        int[] num1 = new int[]{2, 4};
-        int[] num2 = new int[]{1, 2, 3, 4};
+        // int[] num1 = new int[]{2, 4};
+        // int[] num2 = new int[]{1, 2, 3, 4};
 
         //O(mn)解法
         int[] result = findFirstBiggerEl(num1, num2);
@@ -52,6 +52,7 @@ public class LeetCode496 {
         * */
         Stack<Integer> stackAsc = new Stack<>();
         HashMap<Integer, Integer> map = new HashMap<>();
+        //1,3,4,2这组数据就比较说明问题
         for (int i = nums2.length - 1 ; i>=0; i--) {
             int curValue = nums2[i];
             while (!stackAsc.isEmpty() && curValue > stackAsc.peek()) {

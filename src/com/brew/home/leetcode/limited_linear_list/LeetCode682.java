@@ -20,8 +20,11 @@ public class LeetCode682 {
      * @Date: 2021/12/5 11:13 AM
      **/
     public static void main(String[] args) {
+        //得：30
         String[] allScores = Arrays.asList("5", "2", "C", "D", "+").toArray(new String[5]);
+        //得：27
         // String[] allScores = Arrays.asList("5","-2","4","C","D","9","+","+").toArray(new String[8]);
+        //得：5
         // String[] allScores = Arrays.asList("5").toArray(new String[1]);
         int totalScore = getTotalScore(allScores);
         System.out.println(totalScore);

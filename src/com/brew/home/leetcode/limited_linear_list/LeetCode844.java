@@ -61,9 +61,13 @@ public class LeetCode844 {
      * @Date: 2020/5/28 2:39 PM
      **/
     public static void main(String[] args){
+        //true
         System.out.println(backspaceCompare("ab#c", "ad#c"));
+        //true
         System.out.println(backspaceCompare("ab##", "c#d#"));
+        //true
         System.out.println(backspaceCompare("a##c", "#a#c"));
+        //false
         System.out.println(backspaceCompare("a#c", "b"));
     }
 
@@ -95,6 +99,65 @@ public class LeetCode844 {
             Character tmp1 = s1.pop();
             Character tmp2 = s2.pop();
             if (!tmp1.equals(tmp2)) return false;
+        }
+        return true;
+    }
+
+
+
+
+    public static boolean backspaceCompare2(String S, String T) {
+        //参考官方题解中的双指针+计数器
+        //目的在于如何时间复杂度O(n)，空间复杂度O(1)解决该问题。
+
+        //一个字符会不会被‘退格’掉，只看后面有没有#号，而不用管前面。
+        //所以可以倒叙遍历
+        //S遇到#，则计数器+1，其他则计数器-1，到0停下
+        //T同上
+        //比较此时此刻S的当前字符和T的当前字符是否相同，不相同则直接结束
+        //相同则进入下一轮
+
+
+
+        int i = S.length() - 1, j = T.length() - 1;
+        int skipS = 0, skipT = 0;
+
+        while (i >= 0 || j >= 0) {
+            while (i >= 0) {
+                if (S.charAt(i) == '#') {
+                    skipS++;
+                    i--;
+                } else if (skipS > 0) {
+                    skipS--;
+                    i--;
+                } else {
+                    break;
+                }
+            }
+            while (j >= 0) {
+                if (T.charAt(j) == '#') {
+                    skipT++;
+                    j--;
+                } else if (skipT > 0) {
+                    skipT--;
+                    j--;
+                } else {
+                    break;
+                }
+            }
+            if (i >= 0 && j >= 0) {
+                //这一轮结束了，比较下
+                if (S.charAt(i) != T.charAt(j)) {
+                    return false;
+                }
+            } else {
+                //这种情况肯定是返回失败。相当于是S都减完了，你T还余下好多字符。
+                if (i >= 0 || j >= 0) {
+                    return false;
+                }
+            }
+            i--;
+            j--;
         }
         return true;
     }
