@@ -8,6 +8,7 @@ import com.brew.home.common.ListNode;
 public class LeetCode21 {
 
     public static void main(String[] args) {
+        //aa
         ListNode root1 = ListNode.buildCustom(1, 3, 5, 9);
         ListNode root2 = ListNode.buildCustom(2, 6, 12);
         ListNode result = mergeSortedListNode(root1, root2);

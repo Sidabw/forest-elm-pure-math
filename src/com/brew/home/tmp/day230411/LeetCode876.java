@@ -5,6 +5,8 @@ import com.brew.home.common.ListNode;
 public class LeetCode876 {
     public static void main(String[] args) {
         
+        System.out.println(calMidNode(null));
+        
     }
     private static ListNode calMidNode(ListNode head) {
 

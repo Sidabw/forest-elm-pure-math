@@ -64,18 +64,24 @@ public class LeetCode20 {
      * @Date: 2019/7/17 11:52 AM
      **/
     public static void main(String[] args){
-        assert isValid2("{[]}");
-        assert isValid2("([][]){{}}");
-        assert !isValid2("(((([]))}]");
-        assert isValid2("()[]{}");
-        assert !isValid2("(]");
-        assert !isValid2("}[)]");
+       
+        //true
+        System.out.println(isValid2("{[]}"));
+        // true
+        System.out.println(isValid2("([][]){{}}"));
+        // false
+        System.out.println(isValid2("(((([]))}]"));
+        // true
+        System.out.println(isValid2("()[]{}"));
+        // false
+        System.out.println(isValid2("(]"));
+        // false
+        System.out.println(isValid2("}[)]"));
         //false，正确的顺序！！！
-        assert !isValid2("([)]");
+        System.out.println(isValid2("([)]"));
     }
 
     public static boolean isValid2(String origin) {
-        System.out.println("ea coming in");
         //使用Stack来解决这个问题。
         char[] chars = origin.toCharArray();
         Stack<Object> objectStack = new Stack<>();
