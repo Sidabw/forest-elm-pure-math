@@ -12,6 +12,7 @@ public class SortPractice {
         System.out.println(Arrays.toString(bubbleSort(arr)));
         System.out.println(Arrays.toString(selectSort(arr)));
         System.out.println(Arrays.toString(insertSort(arr)));
+        System.out.println(Arrays.toString(shellSort(arr)));
     }
 
     private static int[] bubbleSort(int[] arr) {
@@ -69,6 +70,22 @@ public class SortPractice {
             }
             arr[j+1] = value;
         }
+        return arr;
+    }
+
+    private static int[] shellSort(int[] arr) {
+        arr = Arrays.copyOf(arr, arr.length);
+        
+        for (int gap = arr.length/2 ; gap >0; gap/=2) {
+            for(int i = gap; i < arr.length; i++) {
+                int j = i;
+                while(j-gap>=0 && arr[j] < arr[j-gap]) {
+                    swap(j, j-gap, arr);
+                    j-=gap;
+                }
+            }
+        }
+
         return arr;
     }
 }
