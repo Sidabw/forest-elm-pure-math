@@ -56,7 +56,7 @@ public class B1BinaryTree {
             return;
         }
         inOrder(root.left);
-        System.out.println(root.value);
+        System.out.print(root.value + ",");
         inOrder(root.right);
     }
 

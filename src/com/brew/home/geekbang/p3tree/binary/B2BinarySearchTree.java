@@ -23,12 +23,27 @@ public class B2BinarySearchTree {
 
     public static void main(String[] args) {
         Node root = buildBinarySearchTree();
-        Node target = new Node(12);
-        search(root, target);
-//        delete(root, target);
-//        B1BinaryTree.inOrder(root);
-//         insert(root, 13);
+        System.out.print("原始顺序：");
         B1BinaryTree.inOrder(root);
+        System.out.println();
+
+        Node target = new Node(12);
+        
+        
+        insert(root, 13);
+        System.out.print("insert13后：");
+        B1BinaryTree.inOrder(root);
+        System.out.println();
+
+
+        System.out.print("查找12：");
+        search(root, target);
+
+
+        delete(root, target);
+        System.out.print("删除12后：");
+        B1BinaryTree.inOrder(root);
+
     }
 
     private static void search(Node root, Node target) {
