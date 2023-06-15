@@ -15,18 +15,19 @@ public class BinarySearch {
     public static void main(String[] args) {
         //元素不重复
         int[] origin = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 12, 15, 18, 29, 36, 58};
-        assert binarySearch1(origin, 29) == 11;
+        //1.查找第一个值等于给定值的元素
+        System.out.println(binarySearch1(origin, 29) == 11);
+
         
         //以下测试，元素都是有重复的
-
-        //1.查找第一个值等于给定值的元素
+        //2.查找第一个值等于给定值的元素
         int[] origin2 = new int[]{1, 3, 4, 5, 6, 8, 8, 8, 11, 18};
-        assert binarySearch2(origin2, 8) == 5;
-        //2.查找第一个大于等于给定值的元素
-        assert binarySearch3(origin2, 7) == 5;
-        //3.查找最后一个小于等于给定值的元素
-        assert binarySearch4(origin2, 8) == 7;
-        //4.
+        System.out.println(binarySearch2(origin2, 8) == 5);
+        //3.查找第一个大于等于给定值的元素
+        System.out.println(binarySearch3(origin2, 7) == 5);
+        //4.查找最后一个小于等于给定值的元素
+        System.out.println(binarySearch4(origin2, 8) == 7);
+        //5.求一个数的平方根，保留小数点后6位
         System.out.println(binarySearch5(5));
         System.out.println("all success!");
     }
