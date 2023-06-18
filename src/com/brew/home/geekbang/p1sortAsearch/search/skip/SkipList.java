@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.p1sortAsearch.search;
+package com.brew.home.geekbang.p1sortAsearch.search.skip;
 
 /**
  * 跳表的一种实现方法。

@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.p1sortAsearch.search.wangzheng;
+package com.brew.home.geekbang.p1sortAsearch.search.skip;
 
 import java.util.Random;
 
