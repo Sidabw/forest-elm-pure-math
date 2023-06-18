@@ -29,6 +29,7 @@ public class BinarySearch {
         System.out.println(binarySearch4(origin2, 8) == 7);
         //5.求一个数的平方根，保留小数点后6位
         System.out.println(binarySearch5(5));
+        
         System.out.println("all success!");
     }
 
@@ -48,7 +49,7 @@ public class BinarySearch {
 
     public static int binarySearch2(int[] origin, int target){
         //问题：查找第一个值等于给定值的元素(数组内容有重复)
-        //思路：找到给定值，判定是否要往前再走一步
+        //思路：找到给定值，判定直接返回还是往前面的区间‘递归’的找下去
         int low = 0;
         int high = origin.length - 1;
         while (low <= high) {
@@ -68,7 +69,7 @@ public class BinarySearch {
     
     public static int binarySearch3(int[] origin, int target) {
         //问题：查找第一个大于等于给定值的元素（数组内容有重复）
-        //思路：找到给定值，判断是否要往前走一步
+        //思路：找到给定值，判定直接返回还是往前面的区间‘递归’的找下去
         int low = 0;
         int high = origin.length - 1;
         while (low <= high) {
@@ -85,7 +86,7 @@ public class BinarySearch {
 
     public static int binarySearch4(int[] origin, int target) {
         //问题：查找最后一个小于等于给定值的元素（数组内容有重复）
-        
+        //思路：找到给定值，判定直接返回还是往后面的区间‘递归’的找下去
         int low = 0;
         int high = origin.length - 1;
         int mid = -1;
@@ -109,16 +110,18 @@ public class BinarySearch {
     public static double binarySearch5(int origin) {
         //题目：求一个数的平方根，保留小数点后6位
         //思路：在[0.000000, origin] 内进行二分查找，找到“最后一个小于等于给定值的元素,即（origin）”
+        //(arr[mid] * arr[mid]) <= origin
         
         //1.构建测试数组
-        BigDecimal each = new BigDecimal("0.000000");
+        BigDecimal each = new BigDecimal("0.000001");
         each.setScale(6);
         BigDecimal step = new BigDecimal("0.000001");
         step.setScale(6);
 
         int arrLen = origin * 1000000;
-        BigDecimal[] originArr = new BigDecimal[arrLen + 1];
-        for (int i = 0; i <= arrLen; i++) {
+        //0.000001，0.000002，0.000003，0.000004，0.000005，...
+        BigDecimal[] originArr = new BigDecimal[arrLen];
+        for (int i = 0; i < arrLen; i++) {
             originArr[i] = each;
             each = each.add(step);
             // System.out.println(each.doubleValue());
@@ -131,13 +134,12 @@ public class BinarySearch {
         int mid;
         while(low <= high) {
             mid = (low + high)/2;
-            System.out.println(mid);
+            // System.out.println(mid);
             BigDecimal realOne = originArr[mid].multiply(originArr[mid]);
             if(realOne.compareTo(originDecimal) <= 0) {
                 if(mid == arrLen || originArr[mid + 1].multiply(originArr[mid + 1]).compareTo(originDecimal) > 0) {
                     return originArr[mid].doubleValue();
                 } else {
-                    //FIXME 要是mid已经是0了，这就死循环了
                     low = mid;
                 }
             } else {
