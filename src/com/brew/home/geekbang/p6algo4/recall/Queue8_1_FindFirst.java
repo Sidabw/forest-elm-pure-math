@@ -8,17 +8,16 @@ package com.brew.home.geekbang.p6algo4.recall;
 public class Queue8_1_FindFirst {
 
     public static void main(String[] args) {
-        Queue8_1_FindFirst queue8 = new Queue8_1_FindFirst();
-        queue8.settleQueen(0);
-        queue8.printChessBoard();
+        settleQueen(0);
+        printChessBoard();
     }
 
-    final int MAX_NUM = 8;
+    static final int MAX_NUM = 8;
 
-    int[][] chessBoard = new int[MAX_NUM][MAX_NUM];
+    static int[][] chessBoard = new int[MAX_NUM][MAX_NUM];
 
     //检查落点是否符合规则
-    boolean check(int x, int y) {
+    static boolean check(int x, int y) {
         for (int i = 0; i < y; i++) {
             //检查纵向
             if (chessBoard[x][i] == 1) {
@@ -36,7 +35,7 @@ public class Queue8_1_FindFirst {
         return true;
     }
 
-    boolean settleQueen(int y) {
+    static boolean settleQueen(int y) {
         //行数超过8，说明已经找出答案
         if(y == MAX_NUM){
             return true;
@@ -64,7 +63,7 @@ public class Queue8_1_FindFirst {
     }
 
     //打印棋盘当前值
-    void printChessBoard(){
+    static void printChessBoard(){
         for(int j=0; j<MAX_NUM; j++) {
             for (int i = 0; i < MAX_NUM; i++) {
                 System.out.print(chessBoard[i][j]);
