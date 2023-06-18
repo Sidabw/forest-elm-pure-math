@@ -3,7 +3,9 @@ package com.brew.home.tmp.day230614;
 public class SortPractice6 {
     
     public static void main(String[] args) {
-        
+
+        int[] arr = {321, 6, 12, 53, 46};
+        radixSort(arr);
     }
 
 

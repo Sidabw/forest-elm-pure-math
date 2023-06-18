@@ -8,7 +8,7 @@ public class KMP {
     public static void main(String[] args) {
         String mainStr = "avadfaeterutysdfgaewhbdaffa";
         String subStr = "ut";
-        System.out.println(new KMP().kmp(mainStr.toCharArray(), mainStr.length(), subStr.toCharArray(), subStr.length()));
+        System.out.println(kmp(mainStr.toCharArray(), mainStr.length(), subStr.toCharArray(), subStr.length()));
     }
 
 

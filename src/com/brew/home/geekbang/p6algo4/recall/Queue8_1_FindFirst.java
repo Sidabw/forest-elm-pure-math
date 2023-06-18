@@ -13,12 +13,12 @@ public class Queue8_1_FindFirst {
         queue8.printChessBoard();
     }
 
-    static final int MAX_NUM = 8;
+    final int MAX_NUM = 8;
 
-    static int[][] chessBoard = new int[MAX_NUM][MAX_NUM];
+    int[][] chessBoard = new int[MAX_NUM][MAX_NUM];
 
     //检查落点是否符合规则
-    static boolean check(int x, int y) {
+    boolean check(int x, int y) {
         for (int i = 0; i < y; i++) {
             //检查纵向
             if (chessBoard[x][i] == 1) {
@@ -36,7 +36,7 @@ public class Queue8_1_FindFirst {
         return true;
     }
 
-    static boolean settleQueen(int y) {
+    boolean settleQueen(int y) {
         //行数超过8，说明已经找出答案
         if(y == MAX_NUM){
             return true;
@@ -64,7 +64,7 @@ public class Queue8_1_FindFirst {
     }
 
     //打印棋盘当前值
-    static void printChessBoard(){
+    void printChessBoard(){
         for(int j=0; j<MAX_NUM; j++) {
             for (int i = 0; i < MAX_NUM; i++) {
                 System.out.print(chessBoard[i][j]);
