@@ -131,9 +131,7 @@ public class SkipList2 {
         for (int i = 0; i < level; ++i) {
             update[i] = head;
         }
-
         /**
-         *
          * 1，说明：层是从下到上的，这里最下层编号是0，最上层编号是15
          * 2，这里没有从已有数据最大层（编号最大）开始找，（而是随机层的最大层）导致有些问题。
          *    如果数据量为1亿，随机level=1 ，那么插入时间复杂度为O（n）
@@ -146,7 +144,6 @@ public class SkipList2 {
             // 这里update[i]表示当前层节点的前一节点，因为要找到前一节点，才好插入数据
             update[i] = p;
         }
-
         // 将每一层节点和后面节点关联
         for (int i = 0; i < level; ++i) {
             // 记录当前层节点后面节点指针
@@ -154,7 +151,6 @@ public class SkipList2 {
             // 前一个节点的指针，指向当前节点
             update[i].forwards[i] = newNode;
         }
-
         // 更新层高
         if (levelCount < level) levelCount = level;
     }
