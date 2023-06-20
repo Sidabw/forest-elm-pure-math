@@ -6,6 +6,7 @@ import java.util.Random;
  * 1，跳表的一种实现方法，用于练习。跳表中存储的是正整数，并且存储的是不重复的。
  * 2，本类是参考作者zheng ，自己学习，优化了添加方法
  * 3，看完这个，我觉得再看ConcurrentSkipListMap 源码，会有很大收获
+ * 230620补充，原始代码已经找不到了....
  * Author：ldb
  */
 public class SkipList2 {
@@ -14,7 +15,7 @@ public class SkipList2 {
     /**
      * 当前跳表的最大层高
      */
-    private int levelHeight = 1;
+    private int maxLevelHeight = 1;
 
     /**
      * 带头链表
@@ -25,7 +26,7 @@ public class SkipList2 {
     public Node find(int value) {
         Node p = head;
         // 从最大层开始查找，找到前一节点，通过--i，移动到下层再开始查找
-        for (int i = levelHeight - 1; i >= 0; --i) {
+        for (int i = maxLevelHeight - 1; i >= 0; --i) {
             while (p.forwards[i] != null && p.forwards[i].data < value) {
                 // 找到前一节点
                 p = p.forwards[i];
@@ -43,63 +44,67 @@ public class SkipList2 {
      * 优化了作者zheng的插入方法
      *
      * @param value 值
+     * @param level 当前层层高。0 表示随机层数，不为0，表示指定层数，指定层数
+     *              可以让每次打印结果不变动，这里是为了便于学习理解
      */
-    public void insert(int value) {
-        int level = head.forwards[0] == null ? 1 : randomLevel();
+    public void insert(int value, int curLevelHeight) {
+        // 用0特殊标识
+        //因为randomLevel只会返回[1,16]
+        //forwards的下标是[0.15]
+        if(curLevelHeight == 0) {
+            curLevelHeight = head.forwards[0] == null ? 1 : randomLevel();
+        }
         // 每次只增加一层，如果条件满足
-        if (level > levelHeight) {
-            level = ++levelHeight;
+        if (curLevelHeight > maxLevelHeight) {
+            curLevelHeight = ++maxLevelHeight;
         }
-        Node newNode = new Node(level);
+        Node newNode = new Node(curLevelHeight);
         newNode.data = value;
-        Node update[] = new Node[level];
-        for (int i = 0; i < level; ++i) {
-            update[i] = head;
-        }
 
-        Node p = head;
+        // 层是从下到上的，这里最下层编号是0，最上层编号是15
         // 从最大层开始查找，找到前一节点，通过--i，移动到下层再开始查找
-        for (int i = levelHeight - 1; i >= 0; --i) {
+        Node p = head;
+        Node preNodes[] = new Node[curLevelHeight];
+        for (int i = maxLevelHeight - 1; i >= 0; --i) {
             while (p.forwards[i] != null && p.forwards[i].data < value) {
                 // 找到前一节点
                 p = p.forwards[i];
             }
             // 只把数据写到自己的层里。
-            //因为是从最大层levelHeight开始找的，levelHeight>level有时。
-            if (level > i) {
-                update[i] = p;
+            //因为是从最大层maxLevelHeight开始找的，maxLevelHeight>curLevelHeight有时。
+            if (curLevelHeight > i) {
+                preNodes[i] = p;
             }
 
         }
-        for (int i = 0; i < level; ++i) {
-            newNode.forwards[i] = update[i].forwards[i];
-            update[i].forwards[i] = newNode;
+        // 把当前节点插进去，链表是怎么插入的来着？
+        for (int i = 0; i < curLevelHeight; ++i) {
+            newNode.forwards[i] = preNodes[i].forwards[i];
+            preNodes[i].forwards[i] = newNode;
         }
-
     }
 
     /**
      * 优化了作者zheng的插入方法2
-     *
      * @param value 值
      */
     public void insert2(int value) {
-        int level = head.forwards[0] == null ? 1 : randomLevel();
+        int curLevelHeight = head.forwards[0] == null ? 1 : randomLevel();
         // 每次只增加一层，如果条件满足
-        if (level > levelHeight) {
-            level = ++levelHeight;
+        if (curLevelHeight > maxLevelHeight) {
+            curLevelHeight = ++maxLevelHeight;
         }
-        Node newNode = new Node(level);
+        Node newNode = new Node(curLevelHeight);
         newNode.data = value;
         Node p = head;
         // 从最大层开始查找，找到前一节点，通过--i，移动到下层再开始查找
-        for (int i = levelHeight - 1; i >= 0; --i) {
+        for (int i = maxLevelHeight - 1; i >= 0; --i) {
             while (p.forwards[i] != null && p.forwards[i].data < value) {
                 // 找到前一节点
                 p = p.forwards[i];
             }
-            // levelCount 会 > level，所以加上判断
-            if (level > i) {
+            // maxLevelHeight 会 > curLevelHeight，所以加上判断
+            if (curLevelHeight > i) {
                 if (p.forwards[i] == null) {
                     p.forwards[i] = newNode;
                 } else {
@@ -112,55 +117,11 @@ public class SkipList2 {
 
     }
 
-    /**
-     * 作者zheng的插入方法，未优化前。优化后参见上面insert()
-     *
-     * @param value 插入值
-     * @param level 0 表示随机层数，不为0，表示指定层数，指定层数
-     *              可以让每次打印结果不变动，这里是为了便于学习理解
-     */
-    public void insert(int value, int level) {
-        // 随机一个层数
-        if (level == 0) {
-            level = randomLevel();
-        }
-        // 创建新节点
-        Node newNode = new Node(level);
-        newNode.data = value;
-
-        // 记录要更新的层数，表示新节点要更新到哪几层
-        Node update[] = new Node[level];
-        for (int i = 0; i < level; ++i) {
-            update[i] = head;
-        }
-        /**
-         * 1，说明：层是从下到上的，这里最下层编号是0，最上层编号是15
-         * 2，这里没有从已有数据最大层（编号最大）开始找，（而是随机层的最大层）导致有些问题。
-         *    如果数据量为1亿，随机level=1 ，那么插入时间复杂度为O（n）
-         */
-        Node p = head;
-        for (int i = level - 1; i >= 0; --i) {
-            while (p.forwards[i] != null && p.forwards[i].data < value) {
-                p = p.forwards[i];
-            }
-            // 这里update[i]表示当前层节点的前一节点，因为要找到前一节点，才好插入数据
-            update[i] = p;
-        }
-        // 将每一层节点和后面节点关联
-        for (int i = 0; i < level; ++i) {
-            // 记录当前层节点后面节点指针
-            newNode.forwards[i] = update[i].forwards[i];
-            // 前一个节点的指针，指向当前节点
-            update[i].forwards[i] = newNode;
-        }
-        // 更新层高
-        if (levelHeight < level) levelHeight = level;
-    }
 
     public void delete(int value) {
-        Node[] update = new Node[levelHeight];
+        Node[] update = new Node[maxLevelHeight];
         Node p = head;
-        for (int i = levelHeight - 1; i >= 0; --i) {
+        for (int i = maxLevelHeight - 1; i >= 0; --i) {
             while (p.forwards[i] != null && p.forwards[i].data < value) {
                 p = p.forwards[i];
             }
@@ -168,7 +129,7 @@ public class SkipList2 {
         }
 
         if (p.forwards[0] != null && p.forwards[0].data == value) {
-            for (int i = levelHeight - 1; i >= 0; --i) {
+            for (int i = maxLevelHeight - 1; i >= 0; --i) {
                 if (update[i].forwards[i] != null && update[i].forwards[i].data == value) {
                     update[i].forwards[i] = update[i].forwards[i].forwards[i];
                 }
@@ -179,10 +140,12 @@ public class SkipList2 {
     /**
      * 随机 level 次，如果是奇数层数 +1，防止伪随机
      * 230620补充，这个表示的应该是第一层的概率是1/2，第二层的是1/2 * 1/2，但三层的是....也就是50%的概率返回 1， 25%的概率返回 2， 12.5%的概率返回 3 .
+     * 换句话说，一级索引中元素个数应该占原始数据的 50%，二级索引中元素个数占 25%，三级索引12.5% ，一直到最顶层。
+     * 按照上面的说法，下面的实现是有问题的，为什么没有任何中断语句呢，先不管了
      * 实际redis是1/4，maxLevel是32.【跳表思想.pdf】
-     * @return
      */
     private int randomLevel() {
+        // 返回层高[1,16]
         int level = 1;
         for (int i = 1; i < MAX_LEVEL; ++i) {
             if (r.nextInt() % 2 == 1) {
@@ -230,7 +193,15 @@ public class SkipList2 {
         /**
          * 表示当前节点位置的下一个节点所有层的数据，从上层切换到下层，就是数组下标-1，
          * forwards[3]表示当前节点在第三层的下一个节点。
-         * 可以对照看下笔记中的‘37’这个数，虽然forward[0]、forward[1]、forward[2]都指向null，但重点在于，这个forward[]是写在37这个node里的，而且会刚好有三个前置节点指向37这个node。
+         * 
+         * 230620补充：
+         * 1. forwards[]表示当前节点的索引层
+         * 2. 当前实现，索引层最大高度16，forwards下标为[0,15]
+         * 3. forwards[]表示的是链表结构，只不过是数组结构而已，不存储数据，只是实际Node的引用
+         * 4. 印象笔记，图-5，【3,7,11,19,22,26,37】，实际Node实例只有6个。
+         * 5. 一个data+一个forwards[level]构成一个Node实例
+         * 6. forwards[0] -> forwards[0] -> forwards[0] -> ... 得到的就是跳表的原始数据。
+         * 7. forwards[0]是原始数据的串联，再往上层，就是跳着连起来的索引层了
          */
         private Node forwards[];
 
@@ -261,8 +232,19 @@ public class SkipList2 {
         list.insert(6, 4);
         list.insert(8, 5);
         list.insert(7, 4);
-        list.printAll_beautiful();
+        // list.printAll_beautiful();
         list.printAll();
+        System.out.println(list.find(8));
+        list.delete(5);
+        System.out.println("delete 5");
+        list.printAll();
+
+
+
+
+
+
+
         /**
          * 结果如下：
          * 									    null:15-------
@@ -286,17 +268,17 @@ public class SkipList2 {
          */
         // 优化后insert()
 
-        SkipList2 list2 = new SkipList2();
-        list2.insert2(1);
-        list2.insert2(2);
-        list2.insert2(6);
-        list2.insert2(7);
-        list2.insert2(8);
-        list2.insert2(3);
-        list2.insert2(4);
-        list2.insert2(5);
-        System.out.println();
-        list2.printAll_beautiful();
+        // SkipList2 list2 = new SkipList2();
+        // list2.insert2(1);
+        // list2.insert2(2);
+        // list2.insert2(6);
+        // list2.insert2(7);
+        // list2.insert2(8);
+        // list2.insert2(3);
+        // list2.insert2(4);
+        // list2.insert2(5);
+        // System.out.println();
+        // list2.printAll_beautiful();
 
 
     }

@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.p1sortAsearch.search;
+package com.brew.home.geekbang.p1sortAsearch.search.binary;
 
 import java.math.BigDecimal;
 

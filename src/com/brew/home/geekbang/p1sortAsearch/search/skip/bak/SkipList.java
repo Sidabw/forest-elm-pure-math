@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.p1sortAsearch.search.skip;
+package com.brew.home.geekbang.p1sortAsearch.search.skip.bak;
 
 /**
  * 跳表的一种实现方法。
@@ -54,6 +54,7 @@ public class SkipList {
       newNode.data = value;
       newNode.maxLevel = level;
       Node update[] = new Node[level];
+      // 这一段代码有啥用嘛？真是搞不懂...
       for (int i = 0; i < level; ++i) {
         update[i] = head;
       }
