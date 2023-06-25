@@ -71,8 +71,8 @@ public class BM {
             int k = 0; // 公共后缀子串长度
             //看图generateGS.png
             while (j >= 0 && b[j] == b[m-1-k]) { // 与b[0, m-1]求公共后缀子串
-                --j;
-                ++k;
+                j--;
+                k++;
                 suffix[k] = j+1; //j+1表示公共后缀子串在b[0, i]中的起始下标
             }
             if (j == -1) prefix[k] = true; //如果公共后缀子串也是模式串的前缀子串
