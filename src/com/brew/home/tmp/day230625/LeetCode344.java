@@ -1,4 +1,4 @@
-package com.brew.home.tmp.day230626;
+package com.brew.home.tmp.day230625;
 
 public class LeetCode344 {
     
