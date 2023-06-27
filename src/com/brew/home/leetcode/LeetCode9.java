@@ -46,10 +46,10 @@ public class LeetCode9 {
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      * 进阶:
      * 你能不将整数转为字符串来解决这个问题吗？     => 取余运算
-     * @return: void
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2020/5/13 5:51 PM
+     * 
+     * @since 2.0.5
+     * @author feiyi
+     *  2020/5/13 5:51 PM
      **/
     public static void main(String[] args){
         System.out.println(isPalindrome(121));

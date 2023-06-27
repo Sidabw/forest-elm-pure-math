@@ -10,9 +10,9 @@ public class LeetCode19 {
     /**
      * 删除倒数n节点
      * @param args args
-     * @return: void
-     * @Author: shaogz
-     * @Date: 2021/11/24 10:19 AM
+     * 
+     * @author shaogz
+     *  2021/11/24 10:19 AM
      **/
     public static void main(String[] args) {
         ListNode root = ListNode.buildNormal();
@@ -24,9 +24,9 @@ public class LeetCode19 {
      *
      * @param root root
      * @param delIndexFromEnd 从1开始
-     * @return: com.brew.home.common.ListNode
-     * @Author: shaogz
-     * @Date: 2021/11/24 10:24 AM
+     * @return com.brew.home.common.ListNode
+     * @author shaogz
+     *  2021/11/24 10:24 AM
      **/
     private static ListNode deleteNthFromEnd(ListNode root, int delIndexFromEnd) {
         //正着遍历一次，得到length，接着得到正数nTh

@@ -15,9 +15,9 @@ public class LeetCode682 {
      * <p> "D" - 表示本回合新获得的得分是前一次得分的两倍。题目数据保证记录此操作时前面总是存在一个有效的分数。
      * <p> "C" - 表示前一次得分无效，将其从记录中移除。题目数据保证记录此操作时前面总是存在一个有效的分数
      * @param args args
-     * @return: void
-     * @Author: shaogz
-     * @Date: 2021/12/5 11:13 AM
+     * 
+     * @author shaogz
+     *  2021/12/5 11:13 AM
      **/
     public static void main(String[] args) {
         String[] allScores = Arrays.asList("5", "2", "C", "D", "+").toArray(new String[5]);

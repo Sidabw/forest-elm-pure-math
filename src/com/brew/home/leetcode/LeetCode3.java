@@ -43,10 +43,10 @@ public class LeetCode3 {
      *
      * @param
      * @Description
-     * @return: void
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2019/6/12 7:56 PM
+     * 
+     * @since 2.0.5
+     * @author feiyi
+     *  2019/6/12 7:56 PM
      **/
     public static void main(String[] args){
         System.out.println(m());

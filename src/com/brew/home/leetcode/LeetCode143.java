@@ -29,10 +29,10 @@ public class LeetCode143 {
      * 示例 2:
      * 给定链表 1->2->3->4->5, 重新排列为 1->5->2->4->3.
      * @param args a
-     * @return void
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2020/10/20 5:22 PM
+     * 
+     * @since 2.0.5
+     * @author feiyi
+     *  2020/10/20 5:22 PM
      **/
     public static void main(String[] args) {
 //        new ListNode()

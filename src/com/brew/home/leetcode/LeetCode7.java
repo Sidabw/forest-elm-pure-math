@@ -40,10 +40,10 @@ public class LeetCode7 {
      * 注意:
      * <p>
      * 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
-     * @return: void
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2019/7/1 7:40 PM
+     * 
+     * @since 2.0.5
+     * @author feiyi
+     *  2019/7/1 7:40 PM
      **/
     public static void main(String[] args){
         System.out.println(n(-230));

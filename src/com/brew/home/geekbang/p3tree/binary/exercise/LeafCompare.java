@@ -58,10 +58,10 @@ public class LeafCompare {
      * 10
      * 6        11
      * 3    7   9   12
-     * @return: com.Java.math.tree.Node
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2020/6/27 3:35 PM
+     * @return com.Java.math.tree.Node
+     * @since 2.0.5
+     * @author feiyi
+     *  2020/6/27 3:35 PM
      **/
     public static Node buildTree1() {
         Node root = new Node(10);
@@ -89,10 +89,10 @@ public class LeafCompare {
      * 10
      * 6        11
      * 3    7   9   12
-     * @return: com.Java.math.tree.Node
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2020/6/27 3:35 PM
+     * @return com.Java.math.tree.Node
+     * @since 2.0.5
+     * @author feiyi
+     *  2020/6/27 3:35 PM
      **/
     public static Node buildTree2() {
         Node root = new Node(8);

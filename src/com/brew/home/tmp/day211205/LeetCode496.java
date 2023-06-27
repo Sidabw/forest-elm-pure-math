@@ -12,9 +12,9 @@ public class LeetCode496 {
     /**
      * 496,  下一个更大元素
      * @param args 🤓
-     * @return: void
-     * @Author: shaogz
-     * @Date: 2021/12/5 11:50 AM
+     * 
+     * @author shaogz
+     *  2021/12/5 11:50 AM
      **/
     public static void main(String[] args) {
         // int[] num1 = new int[]{4, 1, 2};
@@ -38,9 +38,9 @@ public class LeetCode496 {
      * <p>单调栈，降序排序，边构建边用
      * @param nums1 子集
      * @param nums2 全集
-     * @return: int[] 
-     * @Author: shaogz
-     * @Date: 2021/12/5 1:31 PM
+     * @return int[] 
+     * @author shaogz
+     *  2021/12/5 1:31 PM
      **/
     private static int[] findFirstBiggerEl2(int[] nums1, int[] nums2) {
         Stack<Integer> stackAsc = new Stack<>();

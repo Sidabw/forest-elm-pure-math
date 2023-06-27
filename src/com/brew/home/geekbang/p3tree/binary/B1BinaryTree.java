@@ -88,14 +88,9 @@ public class B1BinaryTree {
 
     /**
      * 声明：这只是一个二叉树，不是二叉搜索树
-     * <p>
-     * 10
-     * 6        11
-     * 3    7   9   12
-     * @return: com.Java.math.tree.Node
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2020/6/27 3:35 PM
+     * @return com.Java.math.tree.Node
+     * @since 2.0.5
+     * @author feiyi 2020/6/27 3:35 PM
      **/
     public static Node buildTree() {
         /*

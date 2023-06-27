@@ -30,9 +30,9 @@ public class ListNode {
 
     /**
      * 1,2,3,2,4
-     * @return: com.brew.home.common.ListNode
-     * @Author: shaogz
-     * @Date: 2021/11/22 5:15 PM
+     * @return com.brew.home.common.ListNode
+     * @author shaogz
+     *  2021/11/22 5:15 PM
      **/
     public static ListNode buildNormal() {
         ListNode node1 = new ListNode(1);
@@ -50,9 +50,9 @@ public class ListNode {
 
     /**
      * 构建一个双数的链表:1,2,3,2,4,6
-     * @return: com.brew.home.common.ListNode
-     * @Author: shaogz
-     * @Date: 2021/11/24 11:16 AM
+     * @return com.brew.home.common.ListNode
+     * @author shaogz
+     *  2021/11/24 11:16 AM
      **/
     public static ListNode buildNormalDual() {
         ListNode node1 = new ListNode(1);

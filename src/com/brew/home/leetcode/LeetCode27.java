@@ -67,10 +67,10 @@ public class LeetCode27 {
      * 来源：力扣（LeetCode）
      * 链接：https://leetcode-cn.com/problems/remove-element
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-     * @return: void
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2019/7/19 2:13 PM
+     * 
+     * @since 2.0.5
+     * @author feiyi
+     *  2019/7/19 2:13 PM
      **/
     public static void main(String[] args){
         //        int[] nums = new int[]{0,1,2,2,3,0,4,2};

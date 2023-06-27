@@ -46,10 +46,10 @@ public class LeetCode33 {
      * 链接：https://leetcode-cn.com/problems/search-in-rotated-sorted-array
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      * @param args
-     * @return: void
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2020/10/15 4:32 PM
+     * 
+     * @since 2.0.5
+     * @author feiyi
+     *  2020/10/15 4:32 PM
      **/
     public static void main(String[] args) {
 //        int[] origin = new int[]{4,5,6,7,0,1,2};

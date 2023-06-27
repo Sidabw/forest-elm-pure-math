@@ -38,10 +38,10 @@ public class LeetCode58 {
      * 来源：力扣（LeetCode）
      * 链接：https://leetcode-cn.com/problems/length-of-last-word
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-     * @return: void
-     * @since: 2.0.5
-     * @Author: feiyi
-     * @Date: 2019/7/17 10:53 AM
+     * 
+     * @since 2.0.5
+     * @author feiyi
+     *  2019/7/17 10:53 AM
      **/
     public static void main(String[] args){
         //        String s = "Hello World";

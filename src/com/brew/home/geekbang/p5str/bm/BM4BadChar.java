@@ -77,7 +77,7 @@ public class BM4BadChar {
      * 生成计算xi的ascii数组
      * @param b 模式串
      * @param m 模式串的长度
-     * @return void
+     * 
      * @since 2.0.5
      * @author feiyi 2021/1/24 6:21 PM
      **/
