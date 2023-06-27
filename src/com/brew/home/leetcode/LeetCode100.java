@@ -1,9 +1,9 @@
 package com.brew.home.leetcode;
 
-import com.brew.home.geekbang.p3tree.binary.Node;
+import static com.brew.home.geekbang.p3tree.binary.b1.B1BinaryTree.buildTree;
+import static com.brew.home.geekbang.p3tree.binary.b1.B1BinaryTree.buildTree2;
 
-import static com.brew.home.geekbang.p3tree.binary.B1BinaryTree.buildTree;
-import static com.brew.home.geekbang.p3tree.binary.B1BinaryTree.buildTree2;
+import com.brew.home.geekbang.p3tree.binary.Node;
 
 public class LeetCode100 {
 

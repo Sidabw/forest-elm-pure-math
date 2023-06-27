@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.p3tree.binary.exercise;
+package com.brew.home.geekbang.p3tree.binary.b3;
 
 import com.brew.home.geekbang.p3tree.binary.Node;
 

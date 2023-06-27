@@ -1,4 +1,4 @@
-package com.brew.home.geekbang.p3tree.binary;
+package com.brew.home.geekbang.p3tree.binary.b1;
 
 /**
  * 使用数组存储二叉树
@@ -20,6 +20,7 @@ public class B1BinaryTreeInArr {
         nodes[8] = new ArrNode(8);
         nodes[9] = new ArrNode(9);
         nodes[10] = new ArrNode(10);
+        System.out.println(nodes[1].getVal());
 
         //因为上面是一个完全二叉树，所以出了0角标空着以外，其他角标都有元素
         /*

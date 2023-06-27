@@ -8,10 +8,12 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.geekbang.p3tree.binary;
+package com.brew.home.geekbang.p3tree.binary.b1;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+
+import com.brew.home.geekbang.p3tree.binary.Node;
 
 /**
  * 〈一句话功能简述〉:
@@ -24,28 +26,33 @@ import java.util.Queue;
 public class B1BinaryTree {
 
     public static void main(String[] args) {
+        //中序输出有序数组非本节内容，移步B2BinarySearchTree
         Node root = buildTree();
         preOrder(root);
         System.out.println("^preOrder^------------------------------------------");
-        System.out.println("------------------------------------------");
+        System.out.println();
+        System.out.println();
+
         inOrder(root);
         System.out.println("^inOrder^------------------------------------------");
-        System.out.println("------------------------------------------");
+        System.out.println();
+        System.out.println();
+
         postOrder(root);
         System.out.println("^postOrder^------------------------------------------");
-        System.out.println("------------------------------------------");
+        System.out.println();
+        System.out.println();
+
         levelOrder(root);
         System.out.println("^levelOrder^------------------------------------------");
-        System.out.println("------------------------------------------");
     }
 
     //前序遍历(先打印当前节点，再打印左子树，再打印右子树)
     private static void preOrder(Node root) {
-        if (root != null) {
-            System.out.println(root.value);
-        } else {
+        if (root == null) {
             return;
         }
+        System.out.print(root.value + ",");
         preOrder(root.left);
         preOrder(root.right);
     }
@@ -67,7 +74,7 @@ public class B1BinaryTree {
         }
         postOrder(root.left);
         postOrder(root.right);
-        System.out.println(root.value);
+        System.out.print(root.value + ",");
     }
 
     //分层遍历
@@ -76,7 +83,7 @@ public class B1BinaryTree {
         nodes.offer(root);
         while (!nodes.isEmpty()) {
             Node poll = nodes.poll();
-            System.out.println(poll.value);
+            System.out.print(poll.value + ",");
             if (poll.left != null) {
                 nodes.offer(poll.left);
             }

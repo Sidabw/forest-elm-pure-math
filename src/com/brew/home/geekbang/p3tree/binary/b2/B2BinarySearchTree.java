@@ -8,13 +8,16 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.brew.home.geekbang.p3tree.binary;
+package com.brew.home.geekbang.p3tree.binary.b2;
 
+import com.brew.home.geekbang.p3tree.binary.Node;
+import com.brew.home.geekbang.p3tree.binary.b1.B1BinaryTree;
 
 /**
  * 〈一句话功能简述〉:
  * 〈二叉查找树的插入、查找、删除（logn）〉
  * 20230302补充：上面说的logn是指平衡二叉查找树。
+ * 20230627补充：这里的插入、查找、删除只是demo代码，没有考虑重复的情况，暂时也不用考虑了，可以看笔记比较简单。
  * @author feiyi
  * @create 2020/6/27
  * @since 1.0.0
@@ -27,8 +30,6 @@ public class B2BinarySearchTree {
         B1BinaryTree.inOrder(root);
         System.out.println();
 
-        Node target = new Node(12);
-        
         
         insert(root, 13);
         System.out.print("insert13后：");
@@ -37,24 +38,25 @@ public class B2BinarySearchTree {
 
 
         System.out.print("查找12：");
-        search(root, target);
+        search(root, 12);
 
 
-        delete(root, target);
+        delete(root, 12);
         System.out.print("删除12后：");
         B1BinaryTree.inOrder(root);
+        System.out.println();
 
     }
 
-    private static void search(Node root, Node target) {
+    private static void search(Node root, int targetVal) {
         if (root == null) {
             System.out.println("not found! root null!");
-        } else if (root.value == target.value) {
+        } else if (root.value == targetVal) {
             System.out.println("found! root value:: " + root.value);
-        } else if (target.value < root.value) {
-            search(root.left, target);
+        } else if (targetVal < root.value) {
+            search(root.left, targetVal);
         } else {
-            search(root.right, target);
+            search(root.right, targetVal);
         }
     }
 
@@ -81,11 +83,11 @@ public class B2BinarySearchTree {
         }
     }
 
-    private static void delete(Node root, Node target) {
+    private static void delete(Node root, int targetValue) {
         //第一种情况：删除的节点没有子节点
         //第二种情况：删除的节点有一个子节点
         //第三种情况：删除的节点有两个子节点(找到右子树的最小值替换之)
-        int targetValue = target.value;
+
         //1.找到当前节点和当前节点的父节点
         Node p = root;
         Node pp = null;
@@ -104,8 +106,8 @@ public class B2BinarySearchTree {
         //2,对有两个节点的情况进行特殊处理
         if (p.left != null && p.right != null) {
             //找右子树的最小值
-            Node minP = p.right;
             Node minPP = p;
+            Node minP = p.right;
             while (minP.left != null) {
                 minPP = minP;
                 minP = minP.left;
@@ -135,8 +137,8 @@ public class B2BinarySearchTree {
         } else {
             pp.right = child;
         }
-
     }
+
 
     public static Node buildBinarySearchTree() {
         /*
