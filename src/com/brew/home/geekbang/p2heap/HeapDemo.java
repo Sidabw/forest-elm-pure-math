@@ -23,6 +23,6 @@ package com.brew.home.geekbang.p2heap;
 public class HeapDemo {
 
     /*
-     * 原有实现删掉了，移步： com.brew.home.geekbang.sortAsearch.sort.s5quick.QuickSort.swap.MaxHeapDemo
+     * 原有实现删掉了，移步： com.brew.home.geekbang.p1sortAsearch.sort.s6heap.MaxHeapDemo
      */
 }

@@ -41,6 +41,7 @@ public class MaxHeapDemo {
     public void insert(int val) {
         if (++lastLeafIndex > n) {
             System.out.println("time to Capacity expansion");
+            return;
         }
         //先放到最后一个叶子节点上，
         arr[lastLeafIndex] = val;
@@ -59,7 +60,7 @@ public class MaxHeapDemo {
         System.out.println(arr[1] + " del..");
         arr[1] = arr[lastLeafIndex--];
         //开始堆化
-        heapify(1, n);
+        heapify(1, --n);
     }
 
     public int[] getArr() {
