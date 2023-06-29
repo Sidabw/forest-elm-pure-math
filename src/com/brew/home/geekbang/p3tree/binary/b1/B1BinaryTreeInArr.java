@@ -1,5 +1,8 @@
 package com.brew.home.geekbang.p3tree.binary.b1;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * 使用数组存储二叉树
  *
@@ -29,6 +32,28 @@ public class B1BinaryTreeInArr {
    4     5   6   7
  8  9  10
         */
+    }
+
+    public static void print(int[] arr) {
+        //assumption：[1, len-1]不会又越界
+        //逐层遍历
+        int i = 1;
+        int n = arr.length - 1;
+        //i , 2*i, 2*i+1, ......
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(i);
+        
+        while(!queue.isEmpty()) {
+            int tmp = queue.poll();
+            System.out.print(arr[tmp] + ",");
+
+            int left = tmp * 2;
+            if (left > n) {
+                continue;
+            }
+            queue.offer(left);
+            queue.offer(left + 1);
+        }
     }
 
 

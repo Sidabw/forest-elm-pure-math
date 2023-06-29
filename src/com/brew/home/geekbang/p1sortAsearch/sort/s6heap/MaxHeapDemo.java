@@ -45,7 +45,7 @@ public class MaxHeapDemo {
         }
         //先放到最后一个叶子节点上，
         arr[lastLeafIndex] = val;
-        //再开始向上堆化
+        //再开始自下而上堆化
         int i = lastLeafIndex;
         while (i/2 > 0 && arr[i] > arr[i/2]) {
             swap(i, i/2, arr);
@@ -90,7 +90,7 @@ public class MaxHeapDemo {
     }
 
     /**
-     * 对start角标元素 到 end 角标元素堆化
+     * 对start角标元素 到 end 角标元素堆化.自上而下的堆化.
      * @param start node-index-start
      * @param end node-index-end
      */
