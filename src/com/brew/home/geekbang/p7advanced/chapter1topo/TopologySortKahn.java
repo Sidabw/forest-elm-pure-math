@@ -13,7 +13,7 @@ public class TopologySortKahn extends GraphDirected {
     }
 
     public void sort() {
-        System.out.print(this.getClass().getSimpleName());
+        System.out.print(this.getClass().getSimpleName()+ "  ");
         //1. 创建入度表
         //2. 找到0入度的，写入Deque
         //3. 操作入度表和Deque完成拓扑排序
@@ -35,9 +35,9 @@ public class TopologySortKahn extends GraphDirected {
             }
         }
         Deque<Integer> deque = new LinkedList<>();
-        deque.add(origin);
+        deque.add(origin);//add el to the tail of this dequeu. similar to queue.offer
         while (!deque.isEmpty()) {
-            Integer el = deque.pollFirst();
+            Integer el = deque.pollFirst(); //similar to queue.poll
             System.out.print("->" + el);
             for (int i = 0; i < adj[el].size(); i++) {
                 int downstreamEl = adj[el].get(i);
