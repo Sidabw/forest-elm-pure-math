@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * 找到3度好友关系
+ * 找到3度好友关系,
+ * 在原有bfs的基础上，新增一个int[]记录每个节点的递归深度。
  */
 public class L3Degree3Test extends GraphUndirected {
 

@@ -35,6 +35,7 @@ public class L1BfsMain extends GraphUndirected {
             int w = queue.poll();
             for (int q : adj[w]) {
                 if (!visited[q]) {
+                    // System.out.println(q);
                     prev[q] = w;
                     if (q == t) {
                         print(prev, s, t);

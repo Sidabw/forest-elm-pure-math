@@ -4,8 +4,8 @@ import java.util.LinkedList;
 
 public class GraphUndirected { // 无向图
 
-    protected int v; // 顶点的个数
-    protected LinkedList<Integer>[] adj; // 邻接表
+    public int v; // 顶点的个数
+    public LinkedList<Integer>[] adj; // 邻接表
 
     protected GraphUndirected(int v, LinkedList<Integer>[] adj) {
         this.v = v;
@@ -36,6 +36,17 @@ public class GraphUndirected { // 无向图
 
     protected void init() {
 
+        /*
+
+            0────1────2
+            │    │    │
+            │    │    │
+            3────4────5
+                 │    │
+                 │    │
+                 6────7       
+
+         */
         //一度
         addEdge(0, 3);
         addEdge(0, 1);
