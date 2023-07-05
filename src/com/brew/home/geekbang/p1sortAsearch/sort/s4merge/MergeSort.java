@@ -59,12 +59,13 @@ public class MergeSort {
     }
 
     public static void mergeSort(int[] a, int first, int last, int[] temp) {
-        if (first < last) {
-            int mid = (first + last) / 2;
-            mergeSort(a, first, mid, temp);    //左边有序
-            mergeSort(a, mid + 1, last, temp); //右边有序
-            sortedArrayMerged2(a, first, mid, last, temp); //再将二个有序数列合并
+        if (first >= last) {
+            return;
         }
+        int mid = (first + last) / 2;
+        mergeSort(a, first, mid, temp);    //左边有序
+        mergeSort(a, mid + 1, last, temp); //右边有序
+        sortedArrayMerged2(a, first, mid, last, temp); //再将二个有序数列合并
     }
 
     //合并两个有序数组2
