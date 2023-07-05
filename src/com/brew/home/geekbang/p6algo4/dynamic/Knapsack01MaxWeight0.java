@@ -9,7 +9,7 @@ public class Knapsack01MaxWeight0 {
         System.out.println(knapsack01MaxWeight0.getMaxW());
     }
 
-    // 回溯算法实现。注意：我把输入的变量都定义成了成员变量。
+    // 回溯算法实现。注意：输入的变量都定义成了成员变量。
     private int maxW = Integer.MIN_VALUE; // 结果放到maxW中
     private int[] weight = {2, 2, 4, 6, 3};// 物品重量
     private int n = 5; // 物品个数
