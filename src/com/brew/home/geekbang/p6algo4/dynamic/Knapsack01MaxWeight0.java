@@ -3,7 +3,8 @@ package com.brew.home.geekbang.p6algo4.dynamic;
 public class Knapsack01MaxWeight0 {
 
     public static void main(String[] args) {
-        //0-1 knapsack， 求最大重量， 回溯解法
+        //0-1 knapsack， 提供一组重量不同的物品，提供背包最大承受重量，求该组物品在不超重的前提下的最大重量，
+        //回溯解法
         Knapsack01MaxWeight0 knapsack01MaxWeight0 = new Knapsack01MaxWeight0();
         knapsack01MaxWeight0.f(0,0);
         System.out.println(knapsack01MaxWeight0.getMaxW());
@@ -24,6 +25,15 @@ public class Knapsack01MaxWeight0 {
         if (cw + weight[i] <= w) {
             f(i+1,cw + weight[i]); // 选择装第i个物品
         }
+    }
+
+    //多一层调用栈但是更简洁的写法
+    public void f2(int i, int cw) {
+        if(cw >= w || i == n) {
+            if(cw > maxW) maxW = cw;
+        }
+        f2(i+1, cw);//不装
+        f2(i+1, cw+weight[i]);//装
     }
 
     public int getMaxW() {

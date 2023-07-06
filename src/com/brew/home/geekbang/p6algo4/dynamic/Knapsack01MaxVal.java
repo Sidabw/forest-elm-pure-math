@@ -3,7 +3,7 @@ package com.brew.home.geekbang.p6algo4.dynamic;
 public class Knapsack01MaxVal {
 
     public static void main(String[] args) {
-        //0-1 knapsack， 求最大价值， 二维数组解法
+        //0-1 knapsack， 在MaxWeight的基础上，提供每个物品的价值，求不超过背包重量上限的前提下的最大价值， 二维数组解法
         int[] items = {2, 2, 4, 6, 3};
         int[] value = {3, 4, 8, 9, 6};
         //求出最大价值是18，对应重量应该是：2, 4，3吧
@@ -31,6 +31,7 @@ public class Knapsack01MaxVal {
                 if (states[i-1][j] >= 0) {
                     int v = states[i-1][j] + value[i];
                     //对于重复的，选价值大的。在i着一层，j+weight[i]是会出现重复的。
+                    //但是这个重复，不是这个for造成的，相反，是上面那个for造成的！！
                     if (v > states[i][j+weight[i]]) {
                         states[i][j+weight[i]] = v;
                     }
